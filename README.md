@@ -1,27 +1,31 @@
 # Resume Workspace
 
-This repo keeps shared resume and cover-letter templates separate from company-specific application snapshots.
+This repo keeps durable personal source-of-truth notes separate from reusable templates and finalized application snapshots.
 
 ## Structure
 
-- `Templates/Resumes/`: shared resume variants you update over time
+- `Profile/`: durable facts, preferences, accomplishment inventory, and technology history
+- `Workflow/`: the tailoring process and application-folder rules
+- `Templates/Resumes/page-layouts/`: reusable resume page-format shells
+- `Templates/Resumes/content-starting-points/`: role-focused starting points and emphasis guides
 - `Templates/Cover Letters/`: shared cover letter templates
 - `Applications/`: per-company copies of materials you actually used for each application
+- `skills/patrick-resume-workflow/`: the Codex skill that encodes this workflow
 
 ## Compile
 
 XeLaTeX resumes:
 
 ```bash
-xelatex Templates/Resumes/resume_human_teamsDelineated.tex
+xelatex Templates/Resumes/page-layouts/human-teams-delineated/resume.tex
 xelatex Applications/Netflix/resume.tex
 ```
 
 Standard LaTeX resumes:
 
 ```bash
-pdflatex Templates/Resumes/resume_current.tex
-pdflatex Templates/Resumes/resume_clean_depricated.tex
+pdflatex Templates/Resumes/page-layouts/current-standard/resume.tex
+pdflatex Templates/Resumes/page-layouts/clean-deprecated/resume.tex
 ```
 
 Cover letters:
@@ -37,9 +41,18 @@ Use small commits whenever you finish a meaningful round of edits.
 
 ```bash
 git status
-git add Templates Applications README.md AGENTS.md CLAUDE.md .gitignore
+git add Profile Workflow Templates Applications skills scripts README.md AGENTS.md CLAUDE.md .gitignore
 git commit -m "Update resume bullets for platform roles"
 ```
+
+## Tailoring Workflow
+
+1. Capture the job posting and scaffold `Applications/<Company>/<job-slug>/`.
+2. Audit the posting against `Profile/` and the starting points under `Templates/Resumes/content-starting-points/`.
+3. Draft broadly using `Templates/Resumes/page-layouts/current-standard/resume.tex`.
+4. Prune late to one page.
+5. Save the final `resume.tex`, `resume.pdf`, posting text, and decision summary in the application folder.
+6. Feed any new durable facts or preferences back into `Profile/`, `Templates/`, and the Codex skill.
 
 ## Publish To GitHub
 

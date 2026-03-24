@@ -1,0 +1,4 @@
+interface:
+  display_name: "Patrick Resume Workflow"
+  short_description: "Tailor resumes from job postings while preserving durable notes and finalized applications."
+  default_prompt: "Tailor Patrick Tierney's resume to this job posting, document the decision trail, and persist durable learnings."
