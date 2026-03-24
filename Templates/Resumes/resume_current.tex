@@ -1,0 +1,185 @@
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+%\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+%    \vspace{2pt}
+    \item
+    \textbf{\scshape #1}
+    \vspace{-5pt}
+}
+
+\newcommand{\resumeCompanyHeading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \small #2 \\
+    \end{tabular*}\vspace{-9pt}
+}
+
+\newcommand{\resumeRoleHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & \small #2 \\
+    \end{tabular*}\vspace{-9pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Patrick Tierney} \\ \vspace{1pt}
+    \small (319) 330-5881 $|$
+    \href{mailto:ptierney13@gmail.com}{\underline{ptierney13@gmail.com}} $|$
+    Kirkland, WA 98033 $|$
+    \href{https://linkedin.com/in/ptierney13}{\underline{linkedin.com/in/ptierney13}}
+\end{center}
+
+%\begin{center}
+%    \small Backend and platform engineer with 8 years building systems that are difficult to break and easy to diagnose --- specializing in testing infrastructure, observability, CI/CD tooling, and reliability engineering
+%\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeCompanyHeading{Microsoft, Kirkland WA}{}
+    \resumeRoleHeading{Software Engineer II}{2019 -- 2025}
+    \resumeSubSubheading{CI/CD \& Internal Tooling}{}
+\resumeItemListStart
+  \resumeItem{Architected a testing platform used by 150+ engineers supporting Copilot Hub, coordinating a team of 6 and enabling standardized automated testing}
+  \resumeItem{Defined standards and requirements for an AI-driven static analysis system enforcing testing and compliance}
+  \resumeItem{Consolidated disparate AI tooling from across Microsoft teams into a unified, maintainable platform codebase}
+  \resumeItem{Designed and maintained CI/CD for Whiteboard and CopilotHub, automating builds, testing, and validation}
+  \resumeItem{Developed Azure microservices enabling secure credential and certificate management for internal infrastructure}
+  \resumeItem{Created and maintained Azure DevOps repositories for internal analytics utilities, including CI/CD}
+\resumeItemListEnd
+%    \resumeSubSubheading{Testing Infrastructure}{}
+%     \resumeItemListStart
+%      \resumeItemListEnd
+\resumeSubSubheading{Observability \& Telemetry}{}
+\resumeItemListStart
+  \resumeItem{Co-designed an OpenTelemetry-based instrumentation framework for Microsoft Whiteboard, enabling consistent observability across the service with minimal developer overhead}
+  \resumeItem{Enhanced a telemetry query DSL used by 1,000+ Edge engineers, improving analytics and diagnostic capabilities}
+  \resumeItem{Designed telemetry query APIs ensuring statistically valid results for product experimentation and feature analysis}
+  \resumeItem{Developed automation that generated dashboards from telemetry data for new feature rollouts}
+\resumeItemListEnd
+\resumeSubSubheading{Reliability \& Incident Response}{}
+\resumeItemListStart
+  \resumeItem{Established on-call and incident response practices, reducing incident resolution time by 80\%+ and engineering support workload by 70\%+}
+  \resumeItem{Maintained 99.9\% availability for Microsoft Whiteboard supporting school systems globally during COVID-19}
+  \resumeItem{Designed support and escalation model for sovereign government cloud environments (GCC, GCCH, DoD)}
+  \resumeItem{Built tooling and operational runbooks enabling customer support to resolve issues without engineer escalation}
+\resumeItemListEnd
+\resumeSubSubheading{API \& Data Layer Development}{}
+\resumeItemListStart
+  \resumeItem{Designed data models and API contracts for programmatic access to Whiteboard resources via Microsoft Graph}
+ \resumeItem{Implemented OAuth-based authentication and JWT access token validation for Whiteboard backend services, integrating with Azure AD scopes and permissions}
+%  \resumeItem{Diagnosed a critical architectural flaw during development of Copilot Hub, preventing an estimated week of delivery delay}
+\resumeItemListEnd
+
+    \resumeRoleHeading{Software Engineer I}{2017 -- 2019}
+\resumeSubSubheading{Platform \& Framework Development}{}
+\resumeItemListStart
+  \resumeItem{Stepped up to coordinate a team of 5 engineers during an extended manager absence while migrating a C\# platform to TypeScript/React}
+  \resumeItem{Mentored three interns who all returned to Microsoft as full-time engineers}
+  \resumeItem{Developed platform components used by 80+ engineers as Whiteboard grew from 0 to tens of millions of users}
+  \resumeItem{Designed and maintained features in the layout engine of an internal Microsoft application framework}
+  \resumeItem{Owned layout logic for on-screen placement for non-hierarchical graphical elements across 50+ internal applications}
+\resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Deep Knowledge}{: TypeScript, JavaScript, C\#, .NET, SQL, Azure services, Azure DevOps, YAML-based CI/CD, PowerShell, Jest, Playwright, OpenTelemetry, OAuth/JWT authentication, Distributed Tracing \& Observability} \\
+     \textbf{Foundational Knowledge}{: React, C++, Python, R, Statistical Modeling and Analysis}
+    }}
+ \end{itemize}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Harvey Mudd College}{Claremont, CA}
+      {\normalfont Bachelor's Degree, Computer Science and Mathematics; Concentration in Economics}{\normalfont May 2016}
+  \resumeSubHeadingListEnd
+
+
+%-----------INTERESTS-----------
+%\section{Interests and Activities}
+% \begin{itemize}[leftmargin=0.15in, label={}]
+ %   \small{\item{
+ %    \textbf{Achievements}{: Ten-time Magic: the Gathering Pro Tour competitor, Washington and California Cube Champion} \\
+%     \textbf{Passions}{: Magic: the Gathering, D\&D Dungeon Mastering, Bouldering, Cooking, Board Games}
+%    }}
+% \end{itemize}
+
+%-------------------------------------------
+\end{document}

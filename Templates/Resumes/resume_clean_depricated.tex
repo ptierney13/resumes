@@ -1,0 +1,195 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Patrick Tierney} \\ \vspace{1pt}
+    \small (319) 330-5881 $|$ \href{mailto:ptierney13@gmail.com}{\underline{ptierney13@gmail.com}} $|$
+    Kirkland, WA 98033
+\end{center}
+
+\begin{center}
+    \small Specialized in code reliability and testing, internal tooling and infrastructure, and observability engineering
+\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Microsoft}{Kirkland, WA}
+      {Software Engineer II}{Nov. 2019 -- Feb. 2025}
+    \resumeSubSubheading{AI Hub Team}{July 2024 -- Feb. 2025}
+      \resumeItemListStart
+        \resumeItem{Designed and implemented full-service testing infrastructure serving over 150 engineers, covering local, mid-deployment, and post-deployment validation}
+        \resumeItem{Led a team of 6 engineers to implement the core infrastructure and APIs}
+        \resumeItem{Designed and supervised AI-driven testing validation enforcing coverage best practices and strict accessibility and compliance requirements}
+        \resumeItem{Unified AI tools and utilities from across Microsoft into a single codebase by consulting leads and developers to collect requirements}
+      \resumeItemListEnd
+    \resumeSubSubheading{Whiteboard Team}{Apr. 2020 -- July 2024}
+      \resumeItemListStart
+        \resumeItem{Established On-Call and bug handling best practices, reducing average incident resolution time by over 80\% and on-call workload by over 70\%}
+        \resumeItem{Maintained service availability for multiple countries' school systems through the Covid Pandemic}
+        \resumeItem{Led design and implementation of alerting and telemetry for all of Microsoft Whiteboard via OpenTelemetry, crafting APIs to enforce detailed telemetry generation}
+        \resumeItem{Thoroughly documented alert and monitoring processes, collaborating with engineers to verify documentation was clear and self-sufficient}
+      \resumeItemListEnd
+    \resumeSubSubheading{Edge Telemetry Team}{Nov. 2019 -- Apr. 2020}
+      \resumeItemListStart
+        \resumeItem{Improved a domain-specific query language for Microsoft Edge telemetry, designing APIs to ensure statistically meaningful results}
+        \resumeItem{Designed and implemented automatically generated default data visualizations}
+        \resumeItem{Improved processes for monitoring and addressing data pipeline failures}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Microsoft}{Kirkland, WA}
+      {Software Engineer I}{May 2017 -- Nov. 2019}
+    \resumeSubSubheading{Whiteboard Team}{2018 -- Nov. 2019}
+      \resumeItemListStart
+        \resumeItem{Led a team of 5 engineers to design and implement developer tooling for translating the Intentional Layout Engine from C\# to TypeScript and React}
+        \resumeItem{Supported a team of 80 engineers shipping Whiteboard to tens of millions of users}
+      \resumeItemListEnd
+    \resumeSubSubheading{Layout Engine Team}{May 2017 -- 2018}
+      \resumeItemListStart
+        \resumeItem{Added features to the Layout Engine for the Intentional Application Development Framework to support over 50 internal apps}
+        \resumeItem{Owned, implemented, and maintained support for non-hierarchical graphical elements}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Deep Knowledge}{: TypeScript, JavaScript, C\#, SQL, Azure DevOps and YAML-based CI/CD pipelines, PowerShell, Playwright, OpenTelemetry} \\
+     \textbf{Foundational Knowledge}{: React, C++, Python, Mathematica, MATLAB, R, Statistical Modeling and Analysis, \LaTeX}
+    }}
+ \end{itemize}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Harvey Mudd College}{Claremont, CA}
+      {Bachelor's Degree, Computer Science and Mathematics; Concentration in Economics}{May 2016}
+  \resumeSubHeadingListEnd
+
+
+%-----------INTERESTS-----------
+\section{Interests and Activities}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Achievements}{: Ten-time Magic: the Gathering Pro Tour competitor, Washington and California Cube Champion} \\
+     \textbf{Passions}{: Magic: the Gathering Cube design, D\&D Dungeon Mastering, World of Warcraft: Classic, Board Games, Cooking, Reading, Bouldering, Ultimate Frisbee}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
