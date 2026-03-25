@@ -17,6 +17,8 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
   - `Templates/Resumes/page-layouts/current-standard/resume.tex`
 - Treat the currently checked-in `current-standard` resume as the canonical default baseline unless Patrick explicitly chooses a different starting point.
 - Pull content from previous drafts when helpful, but keep the formatting anchored to the current page layout unless Patrick asks otherwise.
+- When grouping multiple roles under one company super-heading, prefer a single combined role/date line if it reads cleanly, rather than stacking fully right-justified dates.
+- When using a combined role/date line under a company heading, keep it visually closer to the company name and more prominent than the themed subsections below it.
 - Always consider including the short accomplishments/hobbies section at the end.
 - Unless that section is directly relevant to the target job, treat it as one of the first places to cut for space.
 - Maintain support for at least two resume skill-section presentation modes in the reusable system:
@@ -45,6 +47,8 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 - When proposing wording changes that Patrick has not already approved, always present the before and after text first.
 - Once Patrick explicitly approves a wording change, go ahead and apply it rather than keeping it in the open edits list.
 - When sharing visual resume previews during iteration, use the single full-page render by default rather than split or cropped views unless Patrick asks for a different format.
+- When laying out skill lists, prefer line breaks between skills rather than splitting a multi-word skill across lines.
+- When a company heading contains multiple themed subsections, make the subsection styling visually subordinate so the company clearly reads as the parent section.
 
 ## Naming and File Rules
 
