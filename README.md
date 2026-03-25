@@ -67,6 +67,8 @@ That updates:
 - `Templates/Resumes/page-layouts/current-standard/resume.pdf`
 - `preview/current-resume-preview.png`
 
+During resume iteration, the default visual review format is the single full-page preview image at `preview/current-resume-preview.png`.
+
 ## Publish To GitHub
 
 1. Create an empty GitHub repository, for example `resume-workspace`.

@@ -44,6 +44,7 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 
 - When proposing wording changes that Patrick has not already approved, always present the before and after text first.
 - Once Patrick explicitly approves a wording change, go ahead and apply it rather than keeping it in the open edits list.
+- When sharing visual resume previews during iteration, use the single full-page render by default rather than split or cropped views unless Patrick asks for a different format.
 
 ## Naming and File Rules
 
