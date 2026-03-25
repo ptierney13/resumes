@@ -4,22 +4,22 @@ This file is the durable accomplishment source of truth. Keep wording faithful t
 
 ## Testing, CI/CD, and Internal Tooling
 
-- Architected a testing platform used by 150+ engineers supporting Copilot Hub, coordinating a team of 6 and enabling standardized automated testing.
+- Architected and led delivery of a testing platform used by 150+ engineers supporting Copilot Hub, standardizing automated testing.
 - Defined standards and requirements for an AI-driven static analysis system enforcing testing and compliance.
 - Consolidated disparate AI tooling from across Microsoft teams into a unified, maintainable platform codebase.
-- Designed and maintained CI/CD for Whiteboard and Copilot Hub, automating builds, testing, and validation.
+- Built and managed CI/CD for Whiteboard and Copilot Hub, automating builds, testing, and validation.
 - Created and maintained Azure DevOps repositories for internal analytics utilities, including CI/CD.
 
 ## Reliability, Operations, and Incident Response
 
-- Established on-call and incident response practices, reducing incident resolution time by 80%+ and engineering support workload by 70%+.
+- Established on-call and incident response practices, reducing incident resolution time by 80% and engineering support workload by 70%.
 - Maintained 99.9% availability for Microsoft Whiteboard supporting school systems globally during COVID-19.
 - Designed support and escalation models for sovereign government cloud environments including GCC, GCCH, and DoD.
 - Built tooling and operational runbooks enabling customer support to resolve issues without engineer escalation.
 
 ## Observability and Telemetry
 
-- Co-designed an OpenTelemetry-based instrumentation framework for Microsoft Whiteboard, enabling consistent observability across the service with minimal developer overhead.
+- Co-designed and implemented an OpenTelemetry instrumentation framework for Microsoft Whiteboard, making observability consistent across the service while keeping developer overhead low.
 - Enhanced a telemetry query DSL used by 1,000+ Edge engineers, improving analytics and diagnostic capabilities.
 - Designed telemetry query APIs ensuring statistically valid results for product experimentation and feature analysis.
 - Developed automation that generated dashboards from telemetry data for new feature rollouts.
@@ -32,15 +32,15 @@ This file is the durable accomplishment source of truth. Keep wording faithful t
 
 ## Platform and Framework Development
 
-- Stepped up to coordinate a team of 5 engineers during an extended manager absence while migrating a C# platform to TypeScript/React.
-- Developed platform components used by 80+ engineers as Whiteboard grew from 0 to tens of millions of users.
+- Led coordination for a team of 5 engineers during a C#-to-TypeScript/React platform migration.
+- Built layout-engine tooling to position visual elements correctly on screen, supporting 80+ engineers as Whiteboard scaled to tens of millions of users.
 - Designed and maintained features in the layout engine of an internal Microsoft application framework.
 - Owned layout logic for on-screen placement for non-hierarchical graphical elements across 50+ internal applications.
 
 ## Leadership and Mentoring
 
 - Coordinated a team of 6 engineers while building testing infrastructure for Copilot Hub.
-- Stepped up to coordinate a team of 5 engineers during a manager absence.
+- Led coordination for a team of 5 engineers during a C#-to-TypeScript/React platform migration.
 - Mentored three interns who all returned to Microsoft as full-time engineers.
 
 ## Education

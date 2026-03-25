@@ -64,15 +64,15 @@
 \newcommand{\resumeCompanyHeading}[2]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \small #2 \\
-    \end{tabular*}\vspace{-9pt}
+      \large\textbf{#1} & \small #2 \\
+    \end{tabular*}\vspace{-6pt}
 }
 
 \newcommand{\resumeRoleHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small\textbf{#1} & \small #2 \\
-    \end{tabular*}\vspace{-9pt}
+    \begin{tabular*}{0.97\textwidth}{@{\hspace{0.75em}}l@{\extracolsep{\fill}}r}
+      \small\textit{#1} & \small #2 \\
+    \end{tabular*}\vspace{-8pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -105,14 +105,15 @@
 \section{Experience}
   \resumeSubHeadingListStart
 
-    \resumeCompanyHeading{Microsoft, Kirkland WA}{}
+    \resumeCompanyHeading{Microsoft}{}
     \resumeRoleHeading{Software Engineer II}{2019 -- 2025}
+    \resumeRoleHeading{Software Engineer I}{2017 -- 2019}
     \resumeSubSubheading{CI/CD \& Internal Tooling}{}
 \resumeItemListStart
-  \resumeItem{Architected a testing platform used by 150+ engineers supporting Copilot Hub, coordinating a team of 6 and enabling standardized automated testing}
+  \resumeItem{Architected and led delivery of a testing platform used by 150+ engineers supporting Copilot Hub, standardizing automated testing}
   \resumeItem{Defined standards and requirements for an AI-driven static analysis system enforcing testing and compliance}
   \resumeItem{Consolidated disparate AI tooling from across Microsoft teams into a unified, maintainable platform codebase}
-  \resumeItem{Designed and maintained CI/CD for Whiteboard and CopilotHub, automating builds, testing, and validation}
+  \resumeItem{Built and managed CI/CD for Whiteboard and Copilot Hub, automating builds, testing, and validation}
   \resumeItem{Developed Azure microservices enabling secure credential and certificate management for internal infrastructure}
   \resumeItem{Created and maintained Azure DevOps repositories for internal analytics utilities, including CI/CD}
 \resumeItemListEnd
@@ -121,14 +122,14 @@
 %      \resumeItemListEnd
 \resumeSubSubheading{Observability \& Telemetry}{}
 \resumeItemListStart
-  \resumeItem{Co-designed an OpenTelemetry-based instrumentation framework for Microsoft Whiteboard, enabling consistent observability across the service with minimal developer overhead}
+  \resumeItem{Co-designed and implemented an OpenTelemetry instrumentation framework for Microsoft Whiteboard, making observability consistent across the service while keeping developer overhead low}
   \resumeItem{Enhanced a telemetry query DSL used by 1,000+ Edge engineers, improving analytics and diagnostic capabilities}
   \resumeItem{Designed telemetry query APIs ensuring statistically valid results for product experimentation and feature analysis}
   \resumeItem{Developed automation that generated dashboards from telemetry data for new feature rollouts}
 \resumeItemListEnd
 \resumeSubSubheading{Reliability \& Incident Response}{}
 \resumeItemListStart
-  \resumeItem{Established on-call and incident response practices, reducing incident resolution time by 80\%+ and engineering support workload by 70\%+}
+  \resumeItem{Established on-call and incident response practices, reducing incident resolution time by 80\% and engineering support workload by 70\%}
   \resumeItem{Maintained 99.9\% availability for Microsoft Whiteboard supporting school systems globally during COVID-19}
   \resumeItem{Designed support and escalation model for sovereign government cloud environments (GCC, GCCH, DoD)}
   \resumeItem{Built tooling and operational runbooks enabling customer support to resolve issues without engineer escalation}
@@ -140,13 +141,11 @@
 %  \resumeItem{Diagnosed a critical architectural flaw during development of Copilot Hub, preventing an estimated week of delivery delay}
 \resumeItemListEnd
 
-    \resumeRoleHeading{Software Engineer I}{2017 -- 2019}
 \resumeSubSubheading{Platform \& Framework Development}{}
 \resumeItemListStart
-  \resumeItem{Stepped up to coordinate a team of 5 engineers during an extended manager absence while migrating a C\# platform to TypeScript/React}
+  \resumeItem{Led coordination for a team of 5 engineers during a C\#-to-TypeScript/React platform migration}
   \resumeItem{Mentored three interns who all returned to Microsoft as full-time engineers}
-  \resumeItem{Developed platform components used by 80+ engineers as Whiteboard grew from 0 to tens of millions of users}
-  \resumeItem{Designed and maintained features in the layout engine of an internal Microsoft application framework}
+  \resumeItem{Built layout-engine tooling to position visual elements correctly on screen, supporting 80+ engineers as Whiteboard scaled to tens of millions of users}
   \resumeItem{Owned layout logic for on-screen placement for non-hierarchical graphical elements across 50+ internal applications}
 \resumeItemListEnd
 
@@ -157,8 +156,9 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Deep Knowledge}{: TypeScript, JavaScript, C\#, .NET, SQL, Azure services, Azure DevOps, YAML-based CI/CD, PowerShell, Jest, Playwright, OpenTelemetry, OAuth/JWT authentication, Distributed Tracing \& Observability} \\
-     \textbf{Foundational Knowledge}{: React, C++, Python, R, Statistical Modeling and Analysis}
+     \textbf{Languages \& Frameworks}{: TypeScript, JavaScript, C\#, .NET, SQL, React, C++, Python, R} \\
+     \textbf{Infrastructure \& Automation}{: Azure services, Azure DevOps, YAML-based CI/CD, PowerShell} \\
+     \textbf{Testing, Observability \& Security}{: Jest, Playwright, OpenTelemetry, Power BI, Distributed Tracing \& Observability, OAuth/JWT authentication}
     }}
  \end{itemize}
 

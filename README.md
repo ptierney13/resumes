@@ -54,6 +54,19 @@ git commit -m "Update resume bullets for platform roles"
 5. Save the final `resume.tex`, `resume.pdf`, posting text, and decision summary in the application folder.
 6. Feed any new durable facts or preferences back into `Profile/`, `Templates/`, and the Codex skill.
 
+## Preview Loop
+
+Use the existing MiKTeX install plus the local preview renderer:
+
+```bash
+powershell -ExecutionPolicy Bypass -NoProfile -File .\scripts\compile_and_preview_current_resume.ps1
+```
+
+That updates:
+
+- `Templates/Resumes/page-layouts/current-standard/resume.pdf`
+- `preview/current-resume-preview.png`
+
 ## Publish To GitHub
 
 1. Create an empty GitHub repository, for example `resume-workspace`.

@@ -8,12 +8,13 @@ This file maps technologies to evidence already present in Patrick's resume mate
 
 - Migrated a C# platform to TypeScript/React while coordinating a team of 5 engineers.
 - Consolidated AI tooling into a unified, maintainable platform codebase.
-- Built platform components used by 80+ engineers.
+- Built layout-engine tooling to position visual elements correctly on screen, supporting 80+ engineers as Whiteboard scaled to tens of millions of users.
 
 ### C# and .NET
 
 - Migrated a C# platform to TypeScript/React.
 - Worked on the layout engine of an internal Microsoft application framework.
+- Built layout-engine tooling to position visual elements correctly on screen, supporting 80+ engineers as Whiteboard scaled to tens of millions of users.
 - Developed backend and platform services in Microsoft's internal ecosystem.
 
 ### SQL and Data Access
@@ -28,7 +29,7 @@ This file maps technologies to evidence already present in Patrick's resume mate
 
 ### Azure DevOps and YAML-Based CI/CD
 
-- Designed and maintained CI/CD for Whiteboard and Copilot Hub.
+- Built and managed CI/CD for Whiteboard and Copilot Hub.
 - Created and maintained Azure DevOps repositories for internal analytics utilities.
 
 ### PowerShell
@@ -43,9 +44,14 @@ This file maps technologies to evidence already present in Patrick's resume mate
 
 ### OpenTelemetry, Distributed Tracing, and Observability
 
-- Co-designed an OpenTelemetry-based instrumentation framework for Microsoft Whiteboard.
+- Co-designed and implemented an OpenTelemetry instrumentation framework for Microsoft Whiteboard.
 - Led telemetry and alerting work for Microsoft Whiteboard.
 - Enhanced a telemetry query DSL used by 1,000+ Edge engineers.
+
+### Power BI
+
+- Confirmed technology to include in relevant skills sections.
+- Specific accomplishment-level evidence should be added here once Patrick provides the most accurate supporting examples.
 
 ### OAuth, JWT, and Authentication
 

@@ -15,9 +15,16 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 - Do not optimize for one page too early. Build a fuller draft first, then prune late.
 - Use the current page layout as the default formatting baseline:
   - `Templates/Resumes/page-layouts/current-standard/resume.tex`
+- Treat the currently checked-in `current-standard` resume as the canonical default baseline unless Patrick explicitly chooses a different starting point.
 - Pull content from previous drafts when helpful, but keep the formatting anchored to the current page layout unless Patrick asks otherwise.
 - Always consider including the short accomplishments/hobbies section at the end.
 - Unless that section is directly relevant to the target job, treat it as one of the first places to cut for space.
+- Maintain support for at least two resume skill-section presentation modes in the reusable system:
+  - `Primary Technologies` / `Working Knowledge`
+  - grouped-by-area categories
+- Choose the skill-section presentation dynamically based on which format is more appealing for the target posting.
+- When using grouped-by-area categories, prefer meaningful buckets over a catch-all `Additional` section whenever possible.
+- Prefer human-readable category names over vague or buzzword-heavy section labels.
 
 ## Tailoring Rules
 
@@ -32,6 +39,11 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 - Maintain durable personal facts, preferences, accomplishments, and technology history at the repository top level outside `Templates/`.
 - Update those durable docs whenever Patrick confirms a new preference, accomplishment framing, technology history detail, or role-positioning choice.
 - When a resume is finalized for a specific posting, save the job posting, final resume, and decision summary in the corresponding application folder.
+
+## Collaboration Rules
+
+- When proposing wording changes that Patrick has not already approved, always present the before and after text first.
+- Once Patrick explicitly approves a wording change, go ahead and apply it rather than keeping it in the open edits list.
 
 ## Naming and File Rules
 
