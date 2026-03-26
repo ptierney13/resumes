@@ -92,6 +92,7 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
   - a direct link to `Patrick Tierney.pdf`
   - an inline image render of `preview/current-resume-preview.png` as the default visual review artifact
 - In the final completion message, also include a direct link to the application folder containing the generated resume.
+- For those local links, use raw absolute filesystem paths in markdown links. Do not URL-encode spaces.
 
 ## 6. Persist Learnings
 

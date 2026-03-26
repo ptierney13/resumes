@@ -98,6 +98,7 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypas
   - wording changes made in the current revision
   - the summary-line decision and any heading/structure refactor choice
 - In chat responses, include both a direct link to the current `Patrick Tierney.pdf` and an inline render of `preview/current-resume-preview.png`.
+- For local file or folder links, use raw absolute filesystem paths in markdown links. Do not URL-encode spaces.
 - If the organization changed, explicitly summarize what was reorganized and what that structural change was meant to accomplish.
 - Once the resume is finalized, make a git commit and push the completed state unless Patrick explicitly says not to.
 - In the final completion message, include a direct link to the application folder containing the generated resume.
