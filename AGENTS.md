@@ -9,6 +9,7 @@ A collection of LaTeX resumes and cover letters for job applications. Durable pe
 ## Compiling Documents
 
 Agent workflow note: this workspace shell is `cmd`, not PowerShell. Prefer the repository scripts below with full executable paths instead of raw `Get-ChildItem`, `Get-Content`, bare `powershell`, or ad hoc `pdflatex` commands.
+Git note: `git` may not be on `PATH` in this workspace shell. Prefer the full executable path `C:\PROGRA~1\Git\cmd\git.exe` for status, add, commit, and push commands.
 
 Preferred resume workflow commands:
 ```
@@ -74,7 +75,7 @@ The local workspace pointer for "which application is currently active" lives in
 - When presenting a draft for review, include the current PDF and explicitly enumerate any relevant documented knowledge or accomplishments not included in the draft plus any wording changes made in that revision.
 - If the organization changed, explicitly summarize what was reorganized, why it was reorganized, and the intended emphasis or vibe of that structural change.
 - In chat, include both the direct PDF link and the inline full-page preview image by default.
-- Once a resume is finalized, make a git commit for the completed state unless Patrick explicitly says not to.
+- Once a resume is finalized, make a git commit and push the completed state unless Patrick explicitly says not to.
 - In the final completion message, include a direct link to the application folder containing the generated resume.
 
 ### Commented-out Content

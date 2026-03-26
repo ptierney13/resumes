@@ -87,7 +87,7 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
   - how the final version will be saved and organized
   - what should be propagated into durable standards, templates, or source-of-truth docs
   - whether any materially reworded bullets should become reusable default phrasing or stay posting-specific
-- Once finalization is complete, make a git commit for the finished state unless Patrick explicitly says not to.
+- Once finalization is complete, make a git commit and push the finished state unless Patrick explicitly says not to.
 - In chat responses, include both:
   - a direct link to `Patrick Tierney.pdf`
   - an inline image render of `preview/current-resume-preview.png` as the default visual review artifact
@@ -107,5 +107,6 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 ## Agent Execution Notes
 
 - In this workspace, the default shell is `cmd`, not PowerShell. Do not start by using bare `Get-ChildItem`, `Get-Content`, or `powershell` aliases.
+- In this workspace, `git` may not be on `PATH`. Prefer the full executable path `C:\PROGRA~1\Git\cmd\git.exe`.
 - Prefer the repository scripts above over raw `pdflatex`, direct preview-rendering helpers, or ad hoc file-copy commands.
 - Only fall back to manual compile commands when the scripted workflow is broken and you have already checked the documented entry points.

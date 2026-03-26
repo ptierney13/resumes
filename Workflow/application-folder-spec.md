@@ -32,7 +32,7 @@ Capture the quick explanation of why the final resume looks the way it does. Inc
 ## Finalization Expectations
 
 - The final completion message should link directly to the application folder as well as the generated `Patrick Tierney.pdf`.
-- The finalized state should normally be committed to git once the resume and workflow updates are complete.
+- The finalized state should normally be committed and pushed to git once the resume and workflow updates are complete.
 
 ### `resume.tex`
 

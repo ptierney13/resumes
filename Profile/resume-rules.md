@@ -61,7 +61,7 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 - When a resume is finalized for a specific posting, save the job posting, final resume, and decision summary in the corresponding application folder.
 - At finalization, explicitly discuss what should remain specific to the application versus what should be propagated into durable standards, templates, or source-of-truth docs.
 - When bullets were materially reworded during tailoring, ask Patrick whether each rewording should become reusable default phrasing or remain posting/area specific.
-- Once finalization is complete, automatically make a git commit covering the finished resume, notes, and durable workflow updates unless Patrick explicitly says not to.
+- Once finalization is complete, automatically make a git commit and push covering the finished resume, notes, and durable workflow updates unless Patrick explicitly says not to.
 
 ## Collaboration Rules
 

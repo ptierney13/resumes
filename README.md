@@ -40,11 +40,12 @@ pdflatex "Applications/Riot/CoverLetter - services.tex"
 ## Versioning Workflow
 
 Use small commits whenever you finish a meaningful round of edits.
+In this workspace shell, prefer `C:\PROGRA~1\Git\cmd\git.exe` because `git` may not be on `PATH`.
 
 ```bash
-git status
-git add Profile Workflow Templates Applications skills scripts README.md AGENTS.md CLAUDE.md .gitignore
-git commit -m "Update resume bullets for platform roles"
+C:\PROGRA~1\Git\cmd\git.exe status
+C:\PROGRA~1\Git\cmd\git.exe add Profile Workflow Templates Applications skills scripts README.md AGENTS.md CLAUDE.md .gitignore
+C:\PROGRA~1\Git\cmd\git.exe commit -m "Update resume bullets for platform roles"
 ```
 
 ## Tailoring Workflow
@@ -64,7 +65,7 @@ git commit -m "Update resume bullets for platform roles"
    In chat, include the PDF link and the inline full-page preview image from `preview/current-resume-preview.png`.
 6. Save the final `resume.tex`, `Patrick Tierney.pdf`, posting text, and decision summary in the application folder.
 7. Feed any new durable facts or preferences back into `Profile/`, `Templates/`, and the Codex skill.
-8. Once the resume is finalized, make a git commit for the completed state unless Patrick explicitly says not to.
+8. Once the resume is finalized, make a git commit and push the completed state unless Patrick explicitly says not to.
 9. In the completion message, include a direct link to the application folder as well as the final PDF.
 
 ## Preview Loop
