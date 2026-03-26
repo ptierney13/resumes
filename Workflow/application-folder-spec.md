@@ -31,7 +31,8 @@ Capture the quick explanation of why the final resume looks the way it does. Inc
 
 ## Finalization Expectations
 
-- The final completion message should link directly to the application folder as well as the generated `Patrick Tierney.pdf`.
+- The final completion message should include the absolute filesystem path to the application folder as well as the generated `Patrick Tierney.pdf`.
+- Only present those as clickable local links after Patrick has confirmed that the specific link format works in the current Codex client.
 - The finalized state should normally be committed and pushed to git once the resume and workflow updates are complete.
 
 ### `resume.tex`

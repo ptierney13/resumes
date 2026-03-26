@@ -62,11 +62,13 @@ C:\PROGRA~1\Git\cmd\git.exe commit -m "Update resume bullets for platform roles"
 5. Compile and preview with `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\compile_and_preview_current_resume.ps1`.
    When asking Patrick to review a draft, include the PDF and explicitly list relevant documented points omitted from the draft plus wording changes made in that revision.
    If sections or bullets were reorganized, also summarize what moved, why it moved, and the intended emphasis of that reorganization.
-   In chat, include the PDF link and the inline full-page preview image from `preview/current-resume-preview.png`.
+   In chat, include a clear reference to the PDF and the inline full-page preview image from `preview/current-resume-preview.png`.
+   Do not treat a guessed Codex local-link format as durable workflow guidance until Patrick has confirmed that it opens correctly in the current client.
+   Until that validation exists, provide plain absolute filesystem paths for the final PDF and application folder rather than relying on clickable local links.
 6. Save the final `resume.tex`, `Patrick Tierney.pdf`, posting text, and decision summary in the application folder.
 7. Feed any new durable facts or preferences back into `Profile/`, `Templates/`, and the Codex skill.
 8. Once the resume is finalized, make a git commit and push the completed state unless Patrick explicitly says not to.
-9. In the completion message, include a direct link to the application folder as well as the final PDF.
+9. In the completion message, include the absolute filesystem path to the application folder as well as the final PDF, and only use clickable local links after Patrick has confirmed the format works.
 
 ## Preview Loop
 

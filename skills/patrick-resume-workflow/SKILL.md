@@ -97,13 +97,13 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypas
   - relevant documented knowledge or accomplishments from the full source-of-truth materials that are not yet included in the draft
   - wording changes made in the current revision
   - the summary-line decision and any heading/structure refactor choice
-- In chat responses, include both a direct link to the current `Patrick Tierney.pdf` and an inline render of `preview/current-resume-preview.png`.
-- For local file or folder links, use standard markdown links with raw absolute filesystem paths, for example `[label](C:/path/with spaces/file.pdf)`.
-- Do not URL-encode spaces, wrap local paths in angle brackets, or use `file://` URIs.
-- Prefer including a direct file link such as the final PDF even when also mentioning the containing folder, because file links are more reliable than directory links in the Codex app UI.
+- In chat responses, include both a clear reference to the current `Patrick Tierney.pdf` and an inline render of `preview/current-resume-preview.png`.
+- Treat local filesystem links in Codex as unvalidated until Patrick confirms that a format actually opens in the current client.
+- Do not promote a guessed local-link format into durable workflow guidance before that validation happens.
+- Until a working local-link format is validated, provide plain absolute filesystem paths for the final PDF and containing application folder rather than relying on clickable local links.
 - If the organization changed, explicitly summarize what was reorganized and what that structural change was meant to accomplish.
 - Once the resume is finalized, make a git commit and push the completed state unless Patrick explicitly says not to.
-- In the final completion message, include a direct link to the application folder containing the generated resume.
+- In the final completion message, include the absolute filesystem path to the application folder containing the generated resume, and only include a clickable local link once Patrick has confirmed that format works.
 - Save the final role-specific artifacts in:
   - `Applications/<Company>/<job-slug>/resume.tex`
   - `Applications/<Company>/<job-slug>/Patrick Tierney.pdf`
@@ -114,7 +114,7 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypas
 
 - Update `Profile/` files when Patrick confirms new durable facts or preferences.
 - Update `Templates/Resumes/content-starting-points/` when a new framing should become reusable.
-- Update this skill when a repeatable process improvement emerges.
+- Update this skill when a repeatable process improvement emerges and has been validated when validation is relevant.
 
 ## Naming Rules
 

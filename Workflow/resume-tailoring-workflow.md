@@ -89,18 +89,18 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
   - whether any materially reworded bullets should become reusable default phrasing or stay posting-specific
 - Once finalization is complete, make a git commit and push the finished state unless Patrick explicitly says not to.
 - In chat responses, include both:
-  - a direct link to `Patrick Tierney.pdf`
+  - a reference to `Patrick Tierney.pdf`
   - an inline image render of `preview/current-resume-preview.png` as the default visual review artifact
-- In the final completion message, also include a direct link to the application folder containing the generated resume.
-- For those local links, use standard markdown links with raw absolute filesystem paths, for example `[label](C:/path/with spaces/file.pdf)`.
-- Do not URL-encode spaces, wrap local paths in angle brackets, or use `file://` URIs.
-- Prefer including a direct file link such as the final PDF even when also mentioning the containing folder, because file links are more reliable than directory links in the Codex app UI.
+- In the final completion message, also include the absolute filesystem path to the application folder containing the generated resume.
+- Treat local filesystem links in Codex as a client-behavior hypothesis until Patrick confirms that a given format actually opens in the current client.
+- Do not promote a guessed local-link format into durable workflow guidance before that validation step.
+- Until a working local-link format is validated, provide plain absolute filesystem paths for the final PDF and containing application folder rather than relying on clickable local links.
 
 ## 6. Persist Learnings
 
 - Update `Profile/` docs whenever Patrick confirms new durable information or preferences.
 - Update `Templates/Resumes/content-starting-points/` when a new role-specific framing proves useful again.
-- Update the resume workflow skill when a process improvement becomes repeatable.
+- Update the resume workflow skill when a process improvement becomes repeatable and has been validated when validation is relevant.
 
 ## 7. Protect Historical Records
 

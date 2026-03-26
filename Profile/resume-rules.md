@@ -58,6 +58,7 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 - Overdocument rather than underdocument.
 - Maintain durable personal facts, preferences, accomplishments, and technology history at the repository top level outside `Templates/`.
 - Update those durable docs whenever Patrick confirms a new preference, accomplishment framing, technology history detail, or role-positioning choice.
+- When a proposed workflow change depends on tool or client behavior, treat it as a hypothesis until Patrick confirms it works; do not propagate that workaround into durable docs, templates, or skills before validation.
 - When a resume is finalized for a specific posting, save the job posting, final resume, and decision summary in the corresponding application folder.
 - At finalization, explicitly discuss what should remain specific to the application versus what should be propagated into durable standards, templates, or source-of-truth docs.
 - When bullets were materially reworded during tailoring, ask Patrick whether each rewording should become reusable default phrasing or remain posting/area specific.
@@ -72,14 +73,14 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 - When presenting a resume draft for consideration, include the current PDF and explicitly enumerate:
   - relevant documented knowledge, accomplishments, or points about Patrick that are supported by the full source-of-truth docs but are not included in the draft
   - wording changes made since the last reviewed draft or baseline
-- In chat responses, include both a direct link to the current PDF and an inline render of the current full-page preview image when the interface supports images.
-- For local file or folder links in chat, use standard markdown links with raw absolute filesystem paths, for example `[label](C:/path/with spaces/file.pdf)`.
-- Do not URL-encode spaces, wrap local paths in angle brackets, or convert them to `file://` URIs.
-- Prefer linking directly to files rather than only linking to folders, because file links are more reliable than directory links in the Codex app UI.
+- In chat responses, include an accessible reference to the current PDF and an inline render of the current full-page preview image when the interface supports images.
+- Treat local filesystem links in Codex as unvalidated until Patrick confirms a format actually opens in the current client.
+- Do not claim a local-link workaround is solved, or propagate it into durable guidance, before it has been validated.
+- Until a working local-link format is validated, provide the plain absolute filesystem paths for the current PDF and application folder rather than relying on clickable local hyperlinks.
 - If the organization changed, explicitly summarize what was reorganized, why, and the intended emphasis or "vibe" of the structural changes.
 - If no relevant omissions or wording changes exist, say so explicitly rather than leaving those lists implicit.
 - At finalization, explicitly review how the finished resume will be saved and what reusable learnings or phrasing decisions should be carried forward.
-- When the full process is complete, include a direct link to the application folder containing the generated resume so Patrick can easily attach it while applying.
+- When the full process is complete, include the absolute filesystem path to the application folder containing the generated resume, and only include a clickable local link once Patrick has confirmed that format works.
 - When laying out skill lists, prefer line breaks between skills rather than splitting a multi-word skill across lines.
 - When a company heading contains multiple themed subsections, make the subsection styling visually subordinate so the company clearly reads as the parent section.
 
