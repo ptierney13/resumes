@@ -95,6 +95,7 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 - Treat local filesystem links in Codex as a client-behavior hypothesis until Patrick confirms that a given format actually opens in the current client.
 - Do not promote a guessed local-link format into durable workflow guidance before that validation step.
 - Until a working local-link format is validated, provide plain absolute filesystem paths for the final PDF and containing application folder rather than relying on clickable local links.
+- More generally, when Patrick flags a bug, broken workflow, or improper assumption during the process, verify the proposed fix before treating it as solved or persisting it into the workflow.
 
 ## 6. Persist Learnings
 

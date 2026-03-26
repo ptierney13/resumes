@@ -81,6 +81,7 @@ The local workspace pointer for "which application is currently active" lives in
 - Treat Codex local filesystem link behavior as unvalidated until Patrick confirms that a specific format actually opens in the current client.
 - Do not propagate a local-link formatting guess into durable docs or skills before that validation happens.
 - Until a working local-link format is validated, include the plain absolute filesystem paths for the final PDF and application folder so Patrick can navigate there directly without relying on a broken hyperlink.
+- More generally, when Patrick calls out a bug, broken workflow, or improper assumption, verify the proposed fix in the current environment before rolling it out broadly or persisting it into durable instructions.
 
 ### Commented-out Content
 

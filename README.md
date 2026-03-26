@@ -65,6 +65,7 @@ C:\PROGRA~1\Git\cmd\git.exe commit -m "Update resume bullets for platform roles"
    In chat, include a clear reference to the PDF and the inline full-page preview image from `preview/current-resume-preview.png`.
    Do not treat a guessed Codex local-link format as durable workflow guidance until Patrick has confirmed that it opens correctly in the current client.
    Until that validation exists, provide plain absolute filesystem paths for the final PDF and application folder rather than relying on clickable local links.
+   More generally, when Patrick calls out a bug or improper assumption in the workflow, verify the fix before rolling it out broadly or documenting it as the new standard.
 6. Save the final `resume.tex`, `Patrick Tierney.pdf`, posting text, and decision summary in the application folder.
 7. Feed any new durable facts or preferences back into `Profile/`, `Templates/`, and the Codex skill.
 8. Once the resume is finalized, make a git commit and push the completed state unless Patrick explicitly says not to.
