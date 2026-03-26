@@ -1,8 +1,21 @@
 from __future__ import annotations
 
 import argparse
+import importlib
 import sys
 from pathlib import Path
+
+
+def load_pdfium():
+    try:
+        return importlib.import_module("pypdfium2")
+    except ImportError:
+        repo_root = Path(__file__).resolve().parents[1]
+        local_python_dir = repo_root / ".local-tools" / "python"
+        if local_python_dir.exists():
+            sys.path.insert(0, str(local_python_dir))
+            return importlib.import_module("pypdfium2")
+        raise
 
 
 def main() -> int:
@@ -13,7 +26,7 @@ def main() -> int:
     args = parser.parse_args()
 
     try:
-        import pypdfium2 as pdfium
+        pdfium = load_pdfium()
     except ImportError as exc:
         print(f"Missing dependency: {exc}", file=sys.stderr)
         return 1

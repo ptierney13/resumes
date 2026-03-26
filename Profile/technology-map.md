@@ -6,13 +6,13 @@ This file maps technologies to evidence already present in Patrick's resume mate
 
 ### TypeScript and JavaScript
 
-- Migrated a C# platform to TypeScript/React while coordinating a team of 5 engineers.
+- Drove migration of Whiteboard's layout engine from C# to TypeScript/React within its backing framework.
 - Consolidated AI tooling into a unified, maintainable platform codebase.
 - Built layout-engine tooling to position visual elements correctly on screen, supporting 80+ engineers as Whiteboard scaled to tens of millions of users.
 
 ### C# and .NET
 
-- Migrated a C# platform to TypeScript/React.
+- Drove migration of Whiteboard's layout engine from C# to TypeScript/React within its backing framework.
 - Worked on the layout engine of an internal Microsoft application framework.
 - Built layout-engine tooling to position visual elements correctly on screen, supporting 80+ engineers as Whiteboard scaled to tens of millions of users.
 - Developed backend and platform services in Microsoft's internal ecosystem.
@@ -26,6 +26,7 @@ This file maps technologies to evidence already present in Patrick's resume mate
 
 - Developed Azure microservices for secure credential and certificate management.
 - Supported sovereign cloud environments including GCC, GCCH, and DoD.
+- Patrick's direct cloud-infrastructure background is Azure-centered rather than AWS-centered.
 
 ### Azure DevOps and YAML-Based CI/CD
 
@@ -63,6 +64,11 @@ This file maps technologies to evidence already present in Patrick's resume mate
 
 - Participated in the C# to TypeScript/React migration for the platform.
 
+### Node.js
+
+- Patrick confirmed direct Node.js experience.
+- The strongest currently documented backend evidence still comes from Azure microservices, API contracts, and authentication work.
+
 ### C++
 
 - Listed in foundational knowledge in current drafts.
@@ -82,3 +88,9 @@ This file maps technologies to evidence already present in Patrick's resume mate
 - Any concrete Python examples worth elevating beyond foundational knowledge.
 - Any infrastructure, deployment, or backend anecdotes not already captured in the current drafts.
 - Any additional leadership, architecture, or cross-team alignment stories that can be stated precisely without overstating scope.
+
+## Technologies Not Supported For Direct Claims
+
+- AWS services such as EC2, ECS, RDS, S3, and CloudWatch are not currently part of Patrick's confirmed direct experience.
+- Terraform is not currently part of Patrick's confirmed direct experience; the closest durable evidence is manually managed CI/CD and cloud-platform automation in Azure-centric environments.
+- MongoDB and Postgres are not currently part of Patrick's confirmed direct experience; relevant data-store experience should be framed through SQL and Azure-based equivalents instead.

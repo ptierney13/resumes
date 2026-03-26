@@ -4,6 +4,12 @@ import argparse
 from pathlib import Path
 
 
+DEFAULT_RESUME_TEMPLATE = Path(
+    "Templates/Resumes/page-layouts/current-standard/resume.tex"
+)
+ACTIVE_APPLICATION_FILE = Path("preview/active-application.txt")
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Create a standard application folder for a company and job posting."
@@ -31,9 +37,11 @@ def main() -> None:
     repo_root = Path(args.root).resolve()
     target = repo_root / "Applications" / args.company / args.job_slug
     target.mkdir(parents=True, exist_ok=True)
+    (repo_root / ACTIVE_APPLICATION_FILE.parent).mkdir(parents=True, exist_ok=True)
 
     title_line = args.title or args.job_slug.replace("-", " ").title()
     posting_url = args.posting_url or "<paste posting url here>"
+    baseline_resume = repo_root / DEFAULT_RESUME_TEMPLATE
 
     write_if_missing(
         target / "job-posting.md",
@@ -49,9 +57,19 @@ def main() -> None:
         "# Working Notes\n\n"
         "## Requirement Coverage\n\n"
         "- \n\n"
+        "## Summary Line Decision\n\n"
+        "- \n\n"
+        "## Heading And Structure Options\n\n"
+        "- \n\n"
         "## Questions For Patrick\n\n"
         "- \n\n"
         "## Candidate Bullets\n\n"
+        "- \n\n"
+        "## Relevant Documented Points Not Included In Current Draft\n\n"
+        "- \n\n"
+        "## Wording Changes Made\n\n"
+        "- \n\n"
+        "## Propagation Decisions\n\n"
         "- \n",
     )
     write_if_missing(
@@ -59,12 +77,26 @@ def main() -> None:
         "# Decision Summary\n\n"
         "## Themes Emphasized\n\n"
         "- \n\n"
+        "## Summary And Structure Decisions\n\n"
+        "- \n\n"
         "## Important Bullets Included\n\n"
         "- \n\n"
         "## Cuts Or De-Emphasis\n\n"
         "- \n\n"
+        "## Propagation Decisions\n\n"
+        "- \n\n"
         "## Open Questions Or Risks\n\n"
         "- \n",
+    )
+    if baseline_resume.exists():
+        write_if_missing(
+            target / "resume.tex",
+            baseline_resume.read_text(encoding="utf-8"),
+        )
+
+    (repo_root / ACTIVE_APPLICATION_FILE).write_text(
+        str(target),
+        encoding="utf-8",
     )
 
     print(target)

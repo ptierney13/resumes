@@ -5,6 +5,7 @@ This file is the durable accomplishment source of truth. Keep wording faithful t
 ## Testing, CI/CD, and Internal Tooling
 
 - Architected and led delivery of a testing platform used by 150+ engineers supporting Copilot Hub, standardizing automated testing.
+  Older draft wording emphasized coordinating a team of 6 engineers while building the same testing infrastructure; treat that as legacy phrasing for this accomplishment, not a separate accomplishment.
 - Defined standards and requirements for an AI-driven static analysis system enforcing testing and compliance.
 - Consolidated disparate AI tooling from across Microsoft teams into a unified, maintainable platform codebase.
 - Built and managed CI/CD for Whiteboard and Copilot Hub, automating builds, testing, and validation.
@@ -32,15 +33,13 @@ This file is the durable accomplishment source of truth. Keep wording faithful t
 
 ## Platform and Framework Development
 
-- Led coordination for a team of 5 engineers during a C#-to-TypeScript/React platform migration.
+- Drove migration of Whiteboard's layout engine from C# to TypeScript/React within its backing framework.
 - Built layout-engine tooling to position visual elements correctly on screen, supporting 80+ engineers as Whiteboard scaled to tens of millions of users.
-- Designed and maintained features in the layout engine of an internal Microsoft application framework.
 - Owned layout logic for on-screen placement for non-hierarchical graphical elements across 50+ internal applications.
+  Older draft wording described this more generally as designing and maintaining features in the layout engine of an internal Microsoft application framework; treat that as legacy phrasing for the same layout-engine work, not a separate accomplishment.
 
 ## Leadership and Mentoring
 
-- Coordinated a team of 6 engineers while building testing infrastructure for Copilot Hub.
-- Led coordination for a team of 5 engineers during a C#-to-TypeScript/React platform migration.
 - Mentored three interns who all returned to Microsoft as full-time engineers.
 
 ## Education

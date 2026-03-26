@@ -2,10 +2,25 @@ $ErrorActionPreference = 'Stop'
 
 $repoRoot = 'C:\Users\ptier\OneDrive\Desktop\Important\Apps'
 $python = 'C:\Python311\python.exe'
-$pythonLibDir = Join-Path $repoRoot '.local-tools\python'
 $previewScript = Join-Path $repoRoot 'scripts\render_pdf_preview.py'
-$pdfPath = Join-Path $repoRoot 'Templates\Resumes\page-layouts\current-standard\resume.pdf'
+$previewDir = Join-Path $repoRoot 'preview'
+$activeApplicationFile = Join-Path $previewDir 'active-application.txt'
+$defaultPdfPath = Join-Path $repoRoot 'Templates\Resumes\page-layouts\current-standard\resume.pdf'
 $outputPath = Join-Path $repoRoot 'preview\current-resume-preview.png'
 
-$env:PYTHONPATH = $pythonLibDir
-& $python $previewScript $pdfPath $outputPath
+if (Test-Path $activeApplicationFile) {
+  $candidate = (Get-Content $activeApplicationFile -Raw).Trim()
+  if ($candidate) {
+    if (-not [System.IO.Path]::IsPathRooted($candidate)) {
+      $candidate = Join-Path $repoRoot $candidate
+    }
+
+    $resolvedCandidate = [System.IO.Path]::GetFullPath($candidate)
+    $candidatePdf = Join-Path $resolvedCandidate 'resume.pdf'
+    if (Test-Path $candidatePdf) {
+      $defaultPdfPath = $candidatePdf
+    }
+  }
+}
+
+& $python $previewScript $defaultPdfPath $outputPath

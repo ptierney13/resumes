@@ -14,6 +14,8 @@ This repo keeps durable personal source-of-truth notes separate from reusable te
 
 ## Compile
 
+For agent-driven resume iteration, prefer the scripted workflow in the `Preview Loop` section below instead of calling raw LaTeX commands directly.
+
 XeLaTeX resumes:
 
 ```bash
@@ -48,23 +50,34 @@ git commit -m "Update resume bullets for platform roles"
 ## Tailoring Workflow
 
 1. Capture the job posting and scaffold `Applications/<Company>/<job-slug>/`.
+   Prefer `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\init_application_folder.ps1 --company <Company words> --job-slug <job-slug> --title <Role Title words> --posting-url <Posting URL words>`.
+   The direct Python command remains available as a fallback.
+   This also seeds `Applications/<Company>/<job-slug>/resume.tex` and updates `preview/active-application.txt`.
 2. Audit the posting against `Profile/` and the starting points under `Templates/Resumes/content-starting-points/`.
-3. Draft broadly using `Templates/Resumes/page-layouts/current-standard/resume.tex`.
+3. Draft broadly in the active application's `resume.tex`, which starts as a copy of `Templates/Resumes/page-layouts/current-standard/resume.tex`.
+   Always decide whether the draft needs a top-level one-line summary and whether the section headings/order/grouping should be refactored to speak more directly to the posting.
+   Keep headings as accurate summaries of the bullets they contain rather than stuffing in posting buzzwords, and avoid cutting skills or bullets unless doing so clearly improves the draft.
 4. Prune late to one page.
-5. Save the final `resume.tex`, `resume.pdf`, posting text, and decision summary in the application folder.
-6. Feed any new durable facts or preferences back into `Profile/`, `Templates/`, and the Codex skill.
+5. Compile and preview with `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\compile_and_preview_current_resume.ps1`.
+   When asking Patrick to review a draft, include the PDF and explicitly list relevant documented points omitted from the draft plus wording changes made in that revision.
+   If sections or bullets were reorganized, also summarize what moved, why it moved, and the intended emphasis of that reorganization.
+   In chat, include the PDF link and the inline full-page preview image from `preview/current-resume-preview.png`.
+6. Save the final `resume.tex`, `Patrick Tierney.pdf`, posting text, and decision summary in the application folder.
+7. Feed any new durable facts or preferences back into `Profile/`, `Templates/`, and the Codex skill.
+8. Once the resume is finalized, make a git commit for the completed state unless Patrick explicitly says not to.
+9. In the completion message, include a direct link to the application folder as well as the final PDF.
 
 ## Preview Loop
 
 Use the existing MiKTeX install plus the local preview renderer:
 
 ```bash
-powershell -ExecutionPolicy Bypass -NoProfile -File .\scripts\compile_and_preview_current_resume.ps1
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\compile_and_preview_current_resume.ps1
 ```
 
 That updates:
 
-- `Templates/Resumes/page-layouts/current-standard/resume.pdf`
+- the active application's `resume.pdf` and `Patrick Tierney.pdf` when `preview/active-application.txt` points at a valid application folder, otherwise `Templates/Resumes/page-layouts/current-standard/resume.pdf`
 - `preview/current-resume-preview.png`
 
 During resume iteration, the default visual review format is the single full-page preview image at `preview/current-resume-preview.png`.
