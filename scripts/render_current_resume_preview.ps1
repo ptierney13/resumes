@@ -1,12 +1,15 @@
 $ErrorActionPreference = 'Stop'
 
-$repoRoot = 'C:\Users\ptier\OneDrive\Desktop\Important\Apps'
-$python = 'C:\Python311\python.exe'
+$repoRoot = Split-Path $PSScriptRoot -Parent
 $previewScript = Join-Path $repoRoot 'scripts\render_pdf_preview.py'
 $previewDir = Join-Path $repoRoot 'preview'
 $activeApplicationFile = Join-Path $previewDir 'active-application.txt'
 $defaultPdfPath = Join-Path $repoRoot 'Templates\Resumes\page-layouts\current-standard\resume.pdf'
 $outputPath = Join-Path $repoRoot 'preview\current-resume-preview.png'
+
+. (Join-Path $PSScriptRoot 'tool-paths.ps1')
+
+$python = Resolve-ToolPath 'python'
 
 if (Test-Path $activeApplicationFile) {
   $candidate = (Get-Content $activeApplicationFile -Raw).Trim()

@@ -1,12 +1,12 @@
 $ErrorActionPreference = 'Stop'
 
-$repoRoot = 'C:\Users\ptier\OneDrive\Desktop\Important\Apps'
+$repoRoot = Split-Path $PSScriptRoot -Parent
 $defaultResumeDir = Join-Path $repoRoot 'Templates\Resumes\page-layouts\current-standard'
 $previewDir = Join-Path $repoRoot 'preview'
 $activeApplicationFile = Join-Path $previewDir 'active-application.txt'
-$pdflatex = 'C:\Users\ptier\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe'
-$python = 'C:\Python311\python.exe'
 $previewScript = Join-Path $repoRoot 'scripts\render_pdf_preview.py'
+
+. (Join-Path $PSScriptRoot 'tool-paths.ps1')
 
 function Get-ResumeDir {
   if (Test-Path $activeApplicationFile) {
@@ -27,9 +27,8 @@ function Get-ResumeDir {
   return $defaultResumeDir
 }
 
-if (-not (Test-Path $pdflatex)) {
-  throw "Missing MiKTeX pdflatex at $pdflatex"
-}
+$pdflatex = Resolve-ToolPath 'pdflatex'
+$python = Resolve-ToolPath 'python'
 
 if (-not (Test-Path $previewScript)) {
   throw "Missing preview script at $previewScript"

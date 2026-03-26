@@ -10,6 +10,7 @@ A collection of LaTeX resumes and cover letters for job applications. Durable pe
 
 Agent workflow note: this workspace shell is `cmd`, not PowerShell. Prefer the repository scripts below with full executable paths instead of raw `Get-ChildItem`, `Get-Content`, bare `powershell`, or ad hoc `pdflatex` commands.
 Git note: `git` may not be on `PATH` in this workspace shell. Prefer the full executable path `C:\PROGRA~1\Git\cmd\git.exe` for status, add, commit, and push commands.
+Tool-discovery note: when the shell cannot find common executables, inspect `Workflow/agent-environment.md`, run `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\show_tool_locations.ps1`, or bootstrap a one-off command with `C:\Windows\System32\cmd.exe /c call .\scripts\with-agent-path.cmd <command>`.
 
 Preferred resume workflow commands:
 ```

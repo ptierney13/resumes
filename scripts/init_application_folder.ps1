@@ -1,12 +1,11 @@
 $ErrorActionPreference = 'Stop'
 
 $repoRoot = Split-Path $PSScriptRoot -Parent
-$python = 'C:\Python311\python.exe'
 $scriptPath = Join-Path $PSScriptRoot 'init_application_folder.py'
 
-if (-not (Test-Path $python)) {
-  throw "Missing Python at $python"
-}
+. (Join-Path $PSScriptRoot 'tool-paths.ps1')
+
+$python = Resolve-ToolPath 'python'
 
 if (-not (Test-Path $scriptPath)) {
   throw "Missing init script at $scriptPath"

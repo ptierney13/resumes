@@ -108,5 +108,6 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 
 - In this workspace, the default shell is `cmd`, not PowerShell. Do not start by using bare `Get-ChildItem`, `Get-Content`, or `powershell` aliases.
 - In this workspace, `git` may not be on `PATH`. Prefer the full executable path `C:\PROGRA~1\Git\cmd\git.exe`.
+- If common executables are missing from the shell, inspect `Workflow/agent-environment.md`, run `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\show_tool_locations.ps1`, or use `C:\Windows\System32\cmd.exe /c call .\scripts\with-agent-path.cmd <command>` for a one-off repaired PATH.
 - Prefer the repository scripts above over raw `pdflatex`, direct preview-rendering helpers, or ad hoc file-copy commands.
 - Only fall back to manual compile commands when the scripted workflow is broken and you have already checked the documented entry points.
