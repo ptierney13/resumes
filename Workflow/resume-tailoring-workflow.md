@@ -92,7 +92,9 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
   - a direct link to `Patrick Tierney.pdf`
   - an inline image render of `preview/current-resume-preview.png` as the default visual review artifact
 - In the final completion message, also include a direct link to the application folder containing the generated resume.
-- For those local links, use raw absolute filesystem paths in markdown links. Do not URL-encode spaces.
+- For those local links, use standard markdown links with raw absolute filesystem paths, for example `[label](C:/path/with spaces/file.pdf)`.
+- Do not URL-encode spaces, wrap local paths in angle brackets, or use `file://` URIs.
+- Prefer including a direct file link such as the final PDF even when also mentioning the containing folder, because file links are more reliable than directory links in the Codex app UI.
 
 ## 6. Persist Learnings
 

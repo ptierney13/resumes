@@ -77,6 +77,8 @@ The local workspace pointer for "which application is currently active" lives in
 - In chat, include both the direct PDF link and the inline full-page preview image by default.
 - Once a resume is finalized, make a git commit and push the completed state unless Patrick explicitly says not to.
 - In the final completion message, include a direct link to the application folder containing the generated resume.
+- For local links in chat, use standard markdown links with raw absolute filesystem paths. Do not URL-encode spaces, wrap local paths in angle brackets, or use `file://` URIs.
+- Prefer including a direct file link such as the final PDF even when also mentioning the containing folder, because file links are more reliable than directory links in the Codex app UI.
 
 ### Commented-out Content
 

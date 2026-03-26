@@ -73,7 +73,9 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
   - relevant documented knowledge, accomplishments, or points about Patrick that are supported by the full source-of-truth docs but are not included in the draft
   - wording changes made since the last reviewed draft or baseline
 - In chat responses, include both a direct link to the current PDF and an inline render of the current full-page preview image when the interface supports images.
-- For local file or folder links in chat, use raw absolute filesystem paths in markdown links. Do not URL-encode spaces or convert them to file URIs.
+- For local file or folder links in chat, use standard markdown links with raw absolute filesystem paths, for example `[label](C:/path/with spaces/file.pdf)`.
+- Do not URL-encode spaces, wrap local paths in angle brackets, or convert them to `file://` URIs.
+- Prefer linking directly to files rather than only linking to folders, because file links are more reliable than directory links in the Codex app UI.
 - If the organization changed, explicitly summarize what was reorganized, why, and the intended emphasis or "vibe" of the structural changes.
 - If no relevant omissions or wording changes exist, say so explicitly rather than leaving those lists implicit.
 - At finalization, explicitly review how the finished resume will be saved and what reusable learnings or phrasing decisions should be carried forward.
