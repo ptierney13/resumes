@@ -89,12 +89,12 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
   - whether any materially reworded bullets should become reusable default phrasing or stay posting-specific
 - Once finalization is complete, make a git commit and push the finished state unless Patrick explicitly says not to.
 - In chat responses, include both:
-  - a reference to `Patrick Tierney.pdf`
+  - a copy-pasteable absolute filesystem path to `Patrick Tierney.pdf`
   - an inline image render of `preview/current-resume-preview.png` as the default visual review artifact
 - In the final completion message, also include the absolute filesystem path to the application folder containing the generated resume.
-- Treat local filesystem links in Codex as a client-behavior hypothesis until Patrick confirms that a given format actually opens in the current client.
+- Treat clickable local filesystem links in Codex as unsupported by default unless Patrick later confirms that a given format actually opens in the current client.
 - Do not promote a guessed local-link format into durable workflow guidance before that validation step.
-- Until a working local-link format is validated, provide plain absolute filesystem paths for the final PDF and containing application folder rather than relying on clickable local links.
+- The shipped default is to provide plain copy-pasteable absolute filesystem paths for the final PDF and containing application folder rather than relying on clickable local links.
 - More generally, when Patrick flags a bug, broken workflow, or improper assumption during the process, verify the proposed fix before treating it as solved or persisting it into the workflow.
 
 ## 6. Persist Learnings

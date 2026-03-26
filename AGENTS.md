@@ -75,12 +75,12 @@ The local workspace pointer for "which application is currently active" lives in
 - Do not drop skills or bullets unless the omission materially strengthens the resume, usually by making room for stronger or more relevant content.
 - When presenting a draft for review, include the current PDF and explicitly enumerate any relevant documented knowledge or accomplishments not included in the draft plus any wording changes made in that revision.
 - If the organization changed, explicitly summarize what was reorganized, why it was reorganized, and the intended emphasis or vibe of that structural change.
-- In chat, include both an accessible reference to the current PDF and the inline full-page preview image by default.
+- In chat, include both a copy-pasteable absolute filesystem path to the current PDF and the inline full-page preview image by default.
 - Once a resume is finalized, make a git commit and push the completed state unless Patrick explicitly says not to.
 - In the final completion message, include the absolute filesystem path to the application folder containing the generated resume.
-- Treat Codex local filesystem link behavior as unvalidated until Patrick confirms that a specific format actually opens in the current client.
+- Treat clickable local filesystem links in Codex as unsupported by default unless Patrick later confirms a working format in the current client.
 - Do not propagate a local-link formatting guess into durable docs or skills before that validation happens.
-- Until a working local-link format is validated, include the plain absolute filesystem paths for the final PDF and application folder so Patrick can navigate there directly without relying on a broken hyperlink.
+- The shipped default is to include plain copy-pasteable absolute filesystem paths for the final PDF and application folder rather than relying on local hyperlinks.
 - More generally, when Patrick calls out a bug, broken workflow, or improper assumption, verify the proposed fix in the current environment before rolling it out broadly or persisting it into durable instructions.
 
 ### Commented-out Content

@@ -97,14 +97,14 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypas
   - relevant documented knowledge or accomplishments from the full source-of-truth materials that are not yet included in the draft
   - wording changes made in the current revision
   - the summary-line decision and any heading/structure refactor choice
-- In chat responses, include both a clear reference to the current `Patrick Tierney.pdf` and an inline render of `preview/current-resume-preview.png`.
-- Treat local filesystem links in Codex as unvalidated until Patrick confirms that a format actually opens in the current client.
+- In chat responses, include both a copy-pasteable absolute filesystem path to the current `Patrick Tierney.pdf` and an inline render of `preview/current-resume-preview.png`.
+- Treat clickable local filesystem links in Codex as unsupported by default unless Patrick later confirms that a format actually opens in the current client.
 - Do not promote a guessed local-link format into durable workflow guidance before that validation happens.
-- Until a working local-link format is validated, provide plain absolute filesystem paths for the final PDF and containing application folder rather than relying on clickable local links.
+- The shipped default is to provide plain copy-pasteable absolute filesystem paths for the final PDF and containing application folder rather than relying on clickable local links.
 - More generally, when Patrick flags a bug, broken workflow, or improper assumption, verify the proposed fix before treating it as solved or persisting it into the workflow.
 - If the organization changed, explicitly summarize what was reorganized and what that structural change was meant to accomplish.
 - Once the resume is finalized, make a git commit and push the completed state unless Patrick explicitly says not to.
-- In the final completion message, include the absolute filesystem path to the application folder containing the generated resume, and only include a clickable local link once Patrick has confirmed that format works.
+- In the final completion message, include the copy-pasteable absolute filesystem path to the application folder containing the generated resume.
 - Save the final role-specific artifacts in:
   - `Applications/<Company>/<job-slug>/resume.tex`
   - `Applications/<Company>/<job-slug>/Patrick Tierney.pdf`
