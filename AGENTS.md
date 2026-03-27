@@ -12,6 +12,16 @@ Agent workflow note: this workspace shell is `cmd`, not PowerShell. Prefer the r
 Git note: `git` may not be on `PATH` in this workspace shell. Prefer the full executable path `C:\PROGRA~1\Git\cmd\git.exe` for status, add, commit, and push commands.
 Tool-discovery note: when the shell cannot find common executables, inspect `Workflow/agent-environment.md`, run `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\show_tool_locations.ps1`, or bootstrap a one-off command with `C:\Windows\System32\cmd.exe /c call .\scripts\with-agent-path.cmd <command>`.
 
+## Agent Startup Workflow
+
+Before making resume changes, go slowly and fully inspect the intended workflow:
+
+1. Read `AGENTS.md` end to end, then review the relevant docs under `Workflow/` before making assumptions about how a draft should be produced.
+2. Inspect `Templates/Resumes/content-starting-points/` and existing "stuff for you to work off of" baselines before editing a generated `Applications/*/resume.tex` file directly.
+3. Prefer pulling the closest existing baseline and applying documented durable wording updates from `Profile/` or `Workflow/` over ad hoc restructuring.
+4. Only write a helper script or do direct source transformations after confirming there is not already a documented script, baseline, or clean manual path for the task.
+5. When a role-specific baseline exists, preserve its positioning and section-heading strategy rather than treating the current platform/general default as the only starting point.
+
 Preferred resume workflow commands:
 ```
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\init_application_folder.ps1 --company <Company words> --job-slug <job-slug> --title <Role Title words> --posting-url <Posting URL words>
@@ -56,6 +66,8 @@ pdflatex "Applications/Riot/CoverLetter - services.tex"
    - **Do not modify the outer `\begin{tabular}{r|p{14.5cm}}` declaration** — this will break the `\work` macros.
 
 3. **`Templates/Resumes/content-starting-points/`** — Role-focused starting-point files. Use the naming convention `starter__<domain>__<focus>.md`. Keep this tree sparse; only add another folder layer when a natural grouping has more than three siblings.
+   - Keep distinct baselines when the positioning meaningfully differs. In particular, maintain a general platform/backend baseline separately from a DevOps-oriented baseline rather than merging them into one default.
+   - Name DevOps-oriented baselines so they are obviously the CI/CD, observability, reliability, and tooling variant, not the more general platform default.
 
 4. **`Profile/`** — Durable facts, preferences, accomplishments, and technology history that must persist independently of any template reorganization.
 
