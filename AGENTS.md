@@ -17,19 +17,19 @@ Tool-discovery note: when the shell cannot find common executables, inspect `Wor
 Before making resume changes, go slowly and fully inspect the intended workflow:
 
 1. Read `AGENTS.md` end to end, then review the relevant docs under `Workflow/` before making assumptions about how a draft should be produced.
-2. Inspect `Templates/Resumes/content-starting-points/` and existing "stuff for you to work off of" baselines before editing a generated `Applications/*/resume.tex` file directly.
-3. Prefer pulling the closest existing baseline and applying documented durable wording updates from `Profile/` or `Workflow/` over ad hoc restructuring.
+2. Inspect `Templates/Resumes/kickoff-resumes/` and `Templates/Resumes/resume-data/` before editing a generated `Applications/*/resume.tex` file directly.
+3. Prefer pulling the closest kickoff resume and applying documented durable wording updates from `Templates/Resumes/resume-data/`, `Profile/`, or `Workflow/` over ad hoc restructuring.
 4. Only write a helper script or do direct source transformations after confirming there is not already a documented script, baseline, or clean manual path for the task.
-5. When a role-specific baseline exists, preserve its positioning and section-heading strategy rather than treating the current platform/general default as the only starting point.
+5. When a role-specific kickoff resume exists, preserve its positioning and section-heading strategy rather than treating the current platform/general default as the only starting point.
 
 Preferred resume workflow commands:
 ```
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\init_application_folder.ps1 --company <Company words> --job-slug <job-slug> --title <Role Title words> --posting-url <Posting URL words>
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\init_application_folder.ps1 --company <Company words> --job-slug <job-slug> --title <Role Title words> --posting-url <Posting URL words> --kickoff-resume <kickoff-resume>
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\compile_and_preview_current_resume.ps1
 ```
 
-The scaffold command seeds `Applications/<Company>/<job-slug>/resume.tex` from the current-standard template and records the active folder in `preview/active-application.txt`.
-The compile-and-preview script is the canonical agent entry point: it compiles the active application resume when that pointer is set, refreshes `preview/current-resume-preview.png`, and updates both `resume.pdf` and `Patrick Tierney.pdf` in the application folder.
+The scaffold command seeds `Applications/<Company>/<job-slug>/resume.tex` from the chosen kickoff resume under `Templates/Resumes/kickoff-resumes/` and records the active folder in `preview/active-application.txt`.
+The compile-and-preview script is the canonical agent entry point: it compiles the active application resume when that pointer is set, and otherwise falls back to the layout-only `Templates/Resumes/page-layouts/current-standard/` shell. It refreshes `preview/current-resume-preview.png` and updates both `resume.pdf` and `Patrick Tierney.pdf` in the application folder when an active application is selected.
 
 **XeLaTeX resumes** (`Templates/Resumes/page-layouts/human-teams-delineated/resume.tex` and company-specific `Applications/*/resume.tex` variants) require the [Fontin font](http://www.exljbris.com/fontin.html):
 ```
@@ -53,7 +53,7 @@ pdflatex "Applications/Riot/CoverLetter - services.tex"
 
 ### Resume Structure
 
-1. **`Templates/Resumes/page-layouts/`** — Page-format shells for resumes. Current layout folders are:
+1. **`Templates/Resumes/page-layouts/`** — Page-format shells for resumes. These should contain placeholder content only so layout choice stays separate from content decisions. Current layout folders are:
    - `current-standard/`
    - `clean-deprecated/`
    - `human-teams-delineated/`
@@ -65,13 +65,19 @@ pdflatex "Applications/Riot/CoverLetter - services.tex"
    - `\oldwork{...}` — hides entries from output but preserves them in source for reference
    - **Do not modify the outer `\begin{tabular}{r|p{14.5cm}}` declaration** — this will break the `\work` macros.
 
-3. **`Templates/Resumes/content-starting-points/`** — Role-focused starting-point files. Use the naming convention `starter__<domain>__<focus>.md`. Keep this tree sparse; only add another folder layer when a natural grouping has more than three siblings.
-   - Keep distinct baselines when the positioning meaningfully differs. In particular, maintain a general platform/backend baseline separately from a DevOps-oriented baseline rather than merging them into one default.
-   - Name DevOps-oriented baselines so they are obviously the CI/CD, observability, reliability, and tooling variant, not the more general platform default.
+3. **`Templates/Resumes/kickoff-resumes/`** — Fully formed resume baselines for broad classes of roles such as `devops-infra/` and `platform/`. Resume tailoring should usually start from the closest kickoff resume rather than from a layout shell.
+   - Keep distinct kickoff resumes when the positioning meaningfully differs.
+   - Maintain a short `README.md` in each kickoff folder describing when it is appropriate and what it emphasizes.
 
-4. **`Profile/`** — Durable facts, preferences, accomplishments, and technology history that must persist independently of any template reorganization.
+4. **`Templates/Resumes/resume-data/`** — The authoritative content model for resume generation.
+   - `work-history-summary.md` is the readable summary of Patrick's work history and adjacent fit areas.
+   - `approved-resume-points/` contains the allowed bullet ideas and wording variants.
+   - `approved-heading-sets.md` stores previously accepted subsection structures and when to use them.
+   - `skills-inventory.md` is the durable skill pool used to assemble targeted skill sections.
 
-5. **`Workflow/`** — Process documentation describing how to tailor resumes, scaffold application folders, and archive final artifacts.
+5. **`Profile/`** — Durable facts, preferences, accomplishments, and technology history that must persist independently of any template reorganization.
+
+6. **`Workflow/`** — Process documentation describing how to tailor resumes, scaffold application folders, and archive final artifacts.
 
 ### Company-Specific Variants
 
@@ -88,7 +94,8 @@ The local workspace pointer for "which application is currently active" lives in
 - When presenting a draft for review, include the current PDF and explicitly enumerate any relevant documented knowledge or accomplishments not included in the draft plus any wording changes made in that revision.
 - If the organization changed, explicitly summarize what was reorganized, why it was reorganized, and the intended emphasis or vibe of that structural change.
 - In chat, include both a copy-pasteable absolute filesystem path to the current PDF and the inline full-page preview image by default.
-- Once a resume is finalized, make a git commit and push the completed state unless Patrick explicitly says not to.
+- Before any `git commit`, `git push`, or other action with effects outside this project folder, summarize the local changes, highlight any design decisions that were not explicitly specified, and give Patrick a chance to validate.
+- Once a resume is finalized and Patrick has validated the local changes, make a git commit and push the completed state unless he explicitly says not to.
 - In the final completion message, include the absolute filesystem path to the application folder containing the generated resume.
 - Treat clickable local filesystem links in Codex as unsupported by default unless Patrick later confirms a working format in the current client.
 - Do not propagate a local-link formatting guess into durable docs or skills before that validation happens.

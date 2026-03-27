@@ -21,6 +21,7 @@ Store the job description text, source URL if available, and any quick notes abo
 
 Capture the quick explanation of why the final resume looks the way it does. Include:
 
+- chosen kickoff resume
 - strongest themes emphasized
 - summary-line decision
 - heading, ordering, or grouping refactor decisions
@@ -33,11 +34,12 @@ Capture the quick explanation of why the final resume looks the way it does. Inc
 
 - The final completion message should include copy-pasteable absolute filesystem paths for the application folder as well as the generated `Patrick Tierney.pdf`.
 - Do not rely on clickable local links as part of the default workflow unless Patrick later confirms that a specific format works in the current Codex client.
-- The finalized state should normally be committed and pushed to git once the resume and workflow updates are complete.
+- Before any `git commit`, `git push`, or other action with effects outside this project folder, summarize the local changes, call out any design decisions that were not explicitly specified, and give Patrick a chance to validate.
+- The finalized state should normally be committed and pushed to git once the resume and workflow updates are complete and Patrick has validated the local changes.
 
 ### `resume.tex`
 
-The finalized LaTeX resume source for that application. New application folders should be seeded from `Templates/Resumes/page-layouts/current-standard/resume.tex` during scaffolding so agents start from a known-good baseline.
+The finalized LaTeX resume source for that application. New application folders should be seeded from the chosen kickoff resume under `Templates/Resumes/kickoff-resumes/` during scaffolding so agents start from the closest known-good baseline.
 
 ### `Patrick Tierney.pdf`
 
@@ -69,3 +71,4 @@ Use this during drafting for:
 
 - `preview/active-application.txt` is the local pointer used by the compile-and-preview scripts to know which application folder is currently active.
 - Because `preview/` is ignored, this pointer is local workspace state rather than a durable artifact.
+- When no active application folder is set, the preview workflow falls back to the layout-only `Templates/Resumes/page-layouts/current-standard/` shell.

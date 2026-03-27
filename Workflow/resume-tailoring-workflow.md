@@ -6,9 +6,10 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 
 - Capture the company name, role title, job-posting URL if available, and the full posting text.
 - Scaffold the application folder early with `scripts/init_application_folder.py` once the company and job slug are clear.
-- For agent use on this Windows workspace, prefer the exact command `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\init_application_folder.ps1 --company <Company words> --job-slug <job-slug> --title <Role Title words> --posting-url <Posting URL words>`.
-- The direct Python command `C:\Python311\python.exe scripts/init_application_folder.py "<Company>" "<job-slug>" --title "<Role Title>" --posting-url "<Posting URL>"` is still valid as a fallback.
-- That scaffolding step should also seed `Applications/<Company>/<job-slug>/resume.tex` from the current standard baseline and mark the folder as the active application in `preview/active-application.txt`.
+- Choose the best kickoff resume under `Templates/Resumes/kickoff-resumes/` before scaffolding. Current durable options are `devops-infra` and `platform`.
+- For agent use on this Windows workspace, prefer the exact command `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\init_application_folder.ps1 --company <Company words> --job-slug <job-slug> --title <Role Title words> --posting-url <Posting URL words> --kickoff-resume <kickoff-resume>`.
+- The direct Python command `C:\Python311\python.exe scripts/init_application_folder.py "<Company>" "<job-slug>" --title "<Role Title>" --posting-url "<Posting URL>" --kickoff-resume "<kickoff-resume>"` is still valid as a fallback.
+- That scaffolding step seeds `Applications/<Company>/<job-slug>/resume.tex` from the chosen kickoff resume and marks the folder as the active application in `preview/active-application.txt`.
 - Store the raw or cleaned posting in `job-posting.md` inside the target application folder.
 
 ## 2. Requirement Audit
@@ -17,7 +18,7 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
   - `Profile/resume-rules.md`
   - `Profile/accomplishment-inventory.md`
   - `Profile/technology-map.md`
-- Read prior materials in `Templates/` and older finalized applications in `Applications/` as source material only.
+- Read prior materials in `Templates/Resumes/kickoff-resumes/`, `Templates/Resumes/resume-data/`, and older finalized applications in `Applications/` as source material only.
 - Build a coverage map of:
   - required skills
   - preferred skills
@@ -42,13 +43,15 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 
 ## 3. Draft Broadly First
 
-- Start from the current layout:
-  - `Templates/Resumes/page-layouts/current-standard/resume.tex`
+- Start from the chosen kickoff resume under `Templates/Resumes/kickoff-resumes/`.
+- Treat `Templates/Resumes/page-layouts/` as layout-only shells with placeholder text, not as content baselines.
 - Pull content ideas from:
-  - `Templates/Resumes/content-starting-points/`
-  - `Profile/accomplishment-inventory.md`
-  - `Profile/technology-map.md`
+  - `Templates/Resumes/resume-data/approved-resume-points/`
+  - `Templates/Resumes/resume-data/approved-heading-sets.md`
+  - `Templates/Resumes/resume-data/skills-inventory.md`
+  - `Templates/Resumes/resume-data/work-history-summary.md`
   - prior finalized applications in `Applications/`
+- Do not introduce a bullet into a generated resume unless it already exists in `approved-resume-points/` or Patrick has explicitly approved adding it there first.
 - If the current section headings do not directly speak to the posting, reorder sections, rename headings, or regroup accomplishments before polishing bullet wording.
 - Keep heading changes disciplined: headings should summarize the contents accurately, not just mirror job-posting terminology.
 - Treat older wording variants for the same accomplishment as legacy phrasing, not as separate omitted points to keep re-listing in reviews.
@@ -87,7 +90,8 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
   - how the final version will be saved and organized
   - what should be propagated into durable standards, templates, or source-of-truth docs
   - whether any materially reworded bullets should become reusable default phrasing or stay posting-specific
-- Once finalization is complete, make a git commit and push the finished state unless Patrick explicitly says not to.
+- Before any `git commit`, `git push`, or other action with effects outside this project folder, summarize the local changes, call out any design decisions that were not explicitly specified, and give Patrick a chance to validate.
+- Once finalization is complete and Patrick has validated the local changes, make a git commit and push the finished state unless he explicitly says not to.
 - In chat responses, include both:
   - a copy-pasteable absolute filesystem path to `Patrick Tierney.pdf`
   - an inline image render of `preview/current-resume-preview.png` as the default visual review artifact
@@ -100,7 +104,8 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 ## 6. Persist Learnings
 
 - Update `Profile/` docs whenever Patrick confirms new durable information or preferences.
-- Update `Templates/Resumes/content-starting-points/` when a new role-specific framing proves useful again.
+- Update `Templates/Resumes/kickoff-resumes/` when a new class-of-role framing proves useful again.
+- Update `Templates/Resumes/resume-data/` when approved bullets, heading sets, skills, or work-history framing change.
 - Update the resume workflow skill when a process improvement becomes repeatable and has been validated when validation is relevant.
 
 ## 7. Protect Historical Records

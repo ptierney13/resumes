@@ -16,6 +16,7 @@ $parsed = @{
   'job-slug' = @()
   title = @()
   'posting-url' = @()
+  'kickoff-resume' = @()
 }
 
 $currentKey = $null
@@ -37,9 +38,13 @@ foreach ($token in $args) {
       $currentKey = 'posting-url'
       continue
     }
+    '--kickoff-resume' {
+      $currentKey = 'kickoff-resume'
+      continue
+    }
     default {
       if (-not $currentKey) {
-        throw "Unexpected argument '$token'. Use --company, --job-slug, --title, and --posting-url."
+        throw "Unexpected argument '$token'. Use --company, --job-slug, --title, --posting-url, and --kickoff-resume."
       }
 
       $parsed[$currentKey] += $token
@@ -51,6 +56,7 @@ $companyName = ($parsed['company'] -join ' ').Trim()
 $jobSlug = ($parsed['job-slug'] -join ' ').Trim()
 $titleText = ($parsed['title'] -join ' ').Trim()
 $postingUrlText = ($parsed['posting-url'] -join ' ').Trim()
+$kickoffResume = ($parsed['kickoff-resume'] -join ' ').Trim()
 
 if (-not $companyName) {
   throw 'Missing required value for --company.'
@@ -58,6 +64,10 @@ if (-not $companyName) {
 
 if (-not $jobSlug) {
   throw 'Missing required value for --job-slug.'
+}
+
+if (-not $kickoffResume) {
+  throw 'Missing required value for --kickoff-resume.'
 }
 
 $arguments = @($scriptPath, $companyName, $jobSlug)
@@ -70,6 +80,7 @@ if ($postingUrlText) {
   $arguments += @('--posting-url', $postingUrlText)
 }
 
+$arguments += @('--kickoff-resume', $kickoffResume)
 $arguments += @('--root', $repoRoot)
 
 & $python @arguments

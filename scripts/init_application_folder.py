@@ -4,20 +4,23 @@ import argparse
 from pathlib import Path
 
 
-DEFAULT_RESUME_TEMPLATE = Path(
-    "Templates/Resumes/page-layouts/current-standard/resume.tex"
-)
+KICKOFF_RESUMES_DIR = Path("Templates/Resumes/kickoff-resumes")
 ACTIVE_APPLICATION_FILE = Path("preview/active-application.txt")
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Create a standard application folder for a company and job posting."
+        description="Create an application folder seeded from a chosen kickoff resume."
     )
     parser.add_argument("company", help="Company folder name, for example 'Acme'")
     parser.add_argument("job_slug", help="Lowercase hyphenated job slug")
     parser.add_argument("--title", default="", help="Human-readable job title")
     parser.add_argument("--posting-url", default="", help="Source URL for the job posting")
+    parser.add_argument(
+        "--kickoff-resume",
+        required=True,
+        help="Kickoff resume folder name under Templates/Resumes/kickoff-resumes",
+    )
     parser.add_argument(
         "--root",
         default=".",
@@ -32,6 +35,18 @@ def write_if_missing(path: Path, content: str) -> None:
     path.write_text(content, encoding="utf-8")
 
 
+def list_kickoff_resumes(repo_root: Path) -> list[str]:
+    kickoff_root = repo_root / KICKOFF_RESUMES_DIR
+    if not kickoff_root.exists():
+        return []
+
+    return sorted(
+        child.name
+        for child in kickoff_root.iterdir()
+        if child.is_dir() and (child / "resume.tex").exists()
+    )
+
+
 def main() -> None:
     args = parse_args()
     repo_root = Path(args.root).resolve()
@@ -41,7 +56,15 @@ def main() -> None:
 
     title_line = args.title or args.job_slug.replace("-", " ").title()
     posting_url = args.posting_url or "<paste posting url here>"
-    baseline_resume = repo_root / DEFAULT_RESUME_TEMPLATE
+    baseline_resume = repo_root / KICKOFF_RESUMES_DIR / args.kickoff_resume / "resume.tex"
+
+    if not baseline_resume.exists():
+        available = ", ".join(list_kickoff_resumes(repo_root)) or "<none found>"
+        raise SystemExit(
+            "Kickoff resume "
+            f"'{args.kickoff_resume}' was not found under {KICKOFF_RESUMES_DIR}. "
+            f"Available kickoff resumes: {available}"
+        )
 
     write_if_missing(
         target / "job-posting.md",
@@ -55,6 +78,10 @@ def main() -> None:
     write_if_missing(
         target / "working-notes.md",
         "# Working Notes\n\n"
+        "## Kickoff Resume\n\n"
+        f"- `{args.kickoff_resume}`\n\n"
+        "## Layout Notes\n\n"
+        "- \n\n"
         "## Requirement Coverage\n\n"
         "- \n\n"
         "## Summary Line Decision\n\n"
@@ -75,6 +102,8 @@ def main() -> None:
     write_if_missing(
         target / "decision-summary.md",
         "# Decision Summary\n\n"
+        "## Chosen Kickoff Resume\n\n"
+        f"- `{args.kickoff_resume}`\n\n"
         "## Themes Emphasized\n\n"
         "- \n\n"
         "## Summary And Structure Decisions\n\n"

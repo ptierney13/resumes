@@ -15,8 +15,11 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 - Do not optimize for one page too early. Build a fuller draft first, then prune late.
 - Use the current page layout as the default formatting baseline:
   - `Templates/Resumes/page-layouts/current-standard/resume.tex`
-- Treat the currently checked-in `current-standard` resume as the canonical default baseline unless Patrick explicitly chooses a different starting point.
-- Pull content from previous drafts when helpful, but keep the formatting anchored to the current page layout unless Patrick asks otherwise.
+- Treat files under `Templates/Resumes/page-layouts/` as layout-only shells with placeholder content, not as the source of truth for Patrick's real wording.
+- Choose the closest starting content baseline from `Templates/Resumes/kickoff-resumes/` before drafting.
+- Treat `Templates/Resumes/resume-data/` as the authoritative content source for approved bullets, heading structures, skills, and readable work-history framing.
+- No bullet should appear in a generated resume unless it already exists in `Templates/Resumes/resume-data/approved-resume-points/` or Patrick explicitly approves adding it there first.
+- Pull content from previous drafts when helpful, but keep the formatting anchored to the chosen kickoff resume and page layout unless Patrick asks otherwise.
 - Always consider whether the resume should include a top-level one-line summary.
 - Prefer to omit that summary when the section headings and overall structure already make the target-role fit obvious.
 - When removing a summary or reclaiming top-of-page space, explicitly consider whether the best choice is:
@@ -57,13 +60,15 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 
 - Overdocument rather than underdocument.
 - Maintain durable personal facts, preferences, accomplishments, and technology history at the repository top level outside `Templates/`.
+- Use `Templates/Resumes/resume-data/approved-heading-sets.md` for accepted subsection heading groups and `Templates/Resumes/resume-data/skills-inventory.md` for the durable skill pool.
 - Update those durable docs whenever Patrick confirms a new preference, accomplishment framing, technology history detail, or role-positioning choice.
 - When a proposed workflow change depends on tool or client behavior, treat it as a hypothesis until Patrick confirms it works; do not propagate that workaround into durable docs, templates, or skills before validation.
 - More generally, when Patrick flags a bug, broken workflow, or improper assumption, verify the fix before executing it broadly or persisting it into durable workflow guidance.
 - When a resume is finalized for a specific posting, save the job posting, final resume, and decision summary in the corresponding application folder.
 - At finalization, explicitly discuss what should remain specific to the application versus what should be propagated into durable standards, templates, or source-of-truth docs.
 - When bullets were materially reworded during tailoring, ask Patrick whether each rewording should become reusable default phrasing or remain posting/area specific.
-- Once finalization is complete, automatically make a git commit and push covering the finished resume, notes, and durable workflow updates unless Patrick explicitly says not to.
+- Before any `git commit`, `git push`, or other action with effects outside this project folder, summarize the local changes, highlight any design decisions that were not explicitly specified, and give Patrick a chance to validate.
+- Once finalization is complete and Patrick has validated the local changes, automatically make a git commit and push covering the finished resume, notes, and durable workflow updates unless Patrick explicitly says not to.
 
 ## Collaboration Rules
 
@@ -88,7 +93,7 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 
 ## Naming and File Rules
 
-- Resume starting-point files inside `Templates/Resumes/content-starting-points/` should use the pattern `starter__<domain>__<focus>.md`.
+- Kickoff resumes should live under `Templates/Resumes/kickoff-resumes/<name>/` with a `resume.tex` baseline and a short `README.md` describing when to use it.
 - Finalized application resume source files inside `Applications/<Company>/<job-slug>/` should be named `resume.tex`.
 - The recruiter-facing final PDF should be named `Patrick Tierney.pdf` unless Patrick explicitly asks for a different filename.
-- Keep folder structures sparse. Do not add another subfolder layer unless a directory grows beyond three distinct starting points and a natural grouping appears.
+- Keep folder structures sparse. Do not add another subfolder layer unless a directory grows beyond three distinct kickoff resumes and a natural grouping appears.
