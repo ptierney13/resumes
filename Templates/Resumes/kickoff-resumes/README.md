@@ -4,9 +4,12 @@ These folders contain fully formed resume starting points for broad classes of r
 
 Use one of these as the baseline when initializing a new application folder:
 
+- `assurance-devops/`
+  Use for DevOps or release-engineering roles where the strongest story is CI/CD, artifact/package workflows, telemetry guardrails, and regulated-environment controls.
 - `devops-infra/`
   Use for DevOps, SRE, reliability, observability, CI/CD, and infra-leaning roles.
 - `platform/`
   Use for platform engineering, backend platform, developer infrastructure, and shared-systems roles where the strongest story is "systems other engineers depend on."
 
 These are content baselines, not visual templates. Their wording and structure should evolve when Patrick approves durable changes for that class of role.
+Finalized application resumes that represent a distinct reusable direction should be promoted into this folder rather than forcing future applications to start from the same generic kickoff and move in the same direction again.

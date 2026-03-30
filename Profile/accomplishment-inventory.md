@@ -9,6 +9,7 @@ This file is the durable accomplishment source of truth. Keep wording faithful t
 - Defined standards and requirements for an AI-driven static analysis system enforcing testing and compliance.
 - Consolidated disparate AI tooling from across Microsoft teams into a unified, maintainable platform codebase.
 - Built and managed CI/CD for Whiteboard and Copilot Hub, automating builds, testing, and validation.
+- Owned the Azure DevOps Artifacts npm feed for Copilot Hub shared components, managing package publishing, PR-based promotion, rollback, and CI-validated updates.
 - Created and maintained Azure DevOps repositories for internal analytics utilities, including CI/CD.
 
 ## Reliability, Operations, and Incident Response
@@ -21,6 +22,8 @@ This file is the durable accomplishment source of truth. Keep wording faithful t
 ## Observability and Telemetry
 
 - Co-designed and implemented an OpenTelemetry instrumentation framework for Microsoft Whiteboard, making observability consistent across the service while keeping developer overhead low.
+- Designed shared telemetry APIs, PR-time static analysis, and ingestion-time checks that blocked sensitive data from being logged.
+- Built environment-aware logging APIs used across Whiteboard so engineers could use one telemetry interface while keeping data from sovereign government cloud environments (GCC, GCCH, DoD) out of non-GCC systems.
 - Enhanced a telemetry query DSL used by 1,000+ Edge engineers, improving analytics and diagnostic capabilities.
 - Designed telemetry query APIs ensuring statistically valid results for product experimentation and feature analysis.
 - Developed automation that generated dashboards from telemetry data for new feature rollouts.

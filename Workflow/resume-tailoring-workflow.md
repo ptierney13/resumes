@@ -7,6 +7,7 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 - Capture the company name, role title, job-posting URL if available, and the full posting text.
 - Scaffold the application folder early with `scripts/init_application_folder.py` once the company and job slug are clear.
 - Choose the best kickoff resume under `Templates/Resumes/kickoff-resumes/` before scaffolding. Current durable options are `devops-infra` and `platform`.
+- Prefer the closest previously finalized kickoff-style baseline rather than repeatedly starting from the same generic kickoff when a finalized resume already captures the intended direction.
 - For agent use on this Windows workspace, prefer the exact command `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\init_application_folder.ps1 --company <Company words> --job-slug <job-slug> --title <Role Title words> --posting-url <Posting URL words> --kickoff-resume <kickoff-resume>`.
 - The direct Python command `C:\Python311\python.exe scripts/init_application_folder.py "<Company>" "<job-slug>" --title "<Role Title>" --posting-url "<Posting URL>" --kickoff-resume "<kickoff-resume>"` is still valid as a fallback.
 - That scaffolding step seeds `Applications/<Company>/<job-slug>/resume.tex` from the chosen kickoff resume and marks the folder as the active application in `preview/active-application.txt`.
@@ -26,6 +27,11 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
   - leadership or scope signals
 - Prompt Patrick for missing experience details when a requirement is materially relevant and not already supported by the durable docs.
 - Record explicit non-matches early when the posting names tools Patrick has not used directly, so the draft can lean on analogous experience without overstating fit.
+- Before editing `resume.tex`, present a proposed change list for Patrick to approve or reject item by item. That list should cover:
+  - summary-line decision
+  - section-order or section-heading changes
+  - skills-section organization or label changes
+  - candidate bullet additions, removals, or replacements
 - Decide whether the posting is best served by:
   - the current section headings as-is
   - a reordering of sections
@@ -40,11 +46,13 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 - Treat blank space as a valid outcome when none of the additions clearly strengthens the page.
 - If a summary or personality line is used, prefer non-first-person noun-phrase framing such as `A platform engineer passionate about ...`.
 - Favor the existing headings and skill labels when they already work. Do not rename sections or cut skills just for novelty.
+- Do not apply top-level structural changes until Patrick approves them unless he explicitly asks for a direct first draft.
 
 ## 3. Draft Broadly First
 
 - Start from the chosen kickoff resume under `Templates/Resumes/kickoff-resumes/`.
 - Treat `Templates/Resumes/page-layouts/` as layout-only shells with placeholder text, not as content baselines.
+- After the proposed change list is approved, apply the approved content and organization changes to the draft.
 - Pull content ideas from:
   - `Templates/Resumes/resume-data/approved-resume-points/`
   - `Templates/Resumes/resume-data/approved-heading-sets.md`
@@ -105,6 +113,7 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 
 - Update `Profile/` docs whenever Patrick confirms new durable information or preferences.
 - Update `Templates/Resumes/kickoff-resumes/` when a new class-of-role framing proves useful again.
+- After Patrick finalizes an application resume, evaluate whether it should become a kickoff baseline. If it represents a distinct reusable direction, add or refresh a kickoff folder and README so future similar applications can start there directly.
 - Update `Templates/Resumes/resume-data/` when approved bullets, heading sets, skills, or work-history framing change.
 - Update the resume workflow skill when a process improvement becomes repeatable and has been validated when validation is relevant.
 

@@ -43,6 +43,7 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 - Choose the skill-section presentation dynamically based on which format is more appealing for the target posting.
 - When using grouped-by-area categories, prefer meaningful buckets over a catch-all `Additional` section whenever possible.
 - Prefer human-readable category names over vague or buzzword-heavy section labels.
+- When using grouped-by-area categories, default to the already-approved labels from the chosen kickoff resume unless Patrick explicitly approves a new top-level skills organization for that draft.
 - Do not drop a skill or bullet just because it is less exciting or because a rename feels cleaner; only cut something when doing so materially strengthens the resume, most often by making room for more relevant evidence or by removing weaker duplication.
 
 ## Tailoring Rules
@@ -62,6 +63,7 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 - Maintain durable personal facts, preferences, accomplishments, and technology history at the repository top level outside `Templates/`.
 - Use `Templates/Resumes/resume-data/approved-heading-sets.md` for accepted subsection heading groups and `Templates/Resumes/resume-data/skills-inventory.md` for the durable skill pool.
 - Update those durable docs whenever Patrick confirms a new preference, accomplishment framing, technology history detail, or role-positioning choice.
+- Treat finalized approved resumes as kickoff candidates. When an application resume represents a distinct reusable direction, promote it into `Templates/Resumes/kickoff-resumes/` with a short README rather than starting future similar applications from the same generic kickoff.
 - When a proposed workflow change depends on tool or client behavior, treat it as a hypothesis until Patrick confirms it works; do not propagate that workaround into durable docs, templates, or skills before validation.
 - More generally, when Patrick flags a bug, broken workflow, or improper assumption, verify the fix before executing it broadly or persisting it into durable workflow guidance.
 - When a resume is finalized for a specific posting, save the job posting, final resume, and decision summary in the corresponding application folder.
@@ -72,6 +74,13 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 
 ## Collaboration Rules
 
+- Before drafting or materially editing an application resume, first discuss the proposed content and organization changes and let Patrick approve or reject them item by item unless he explicitly asks for a direct first draft.
+- Treat top-level structural changes as approval-gated:
+  - summary-line addition or removal
+  - section order changes
+  - section-heading renames
+  - skills-section organization or top-level label changes
+- When proposing changes, provide a discrete change list with short justifications rather than silently applying multiple organizational edits at once.
 - When proposing wording changes that Patrick has not already approved, always present the before and after text first.
 - Once Patrick explicitly approves a wording change, go ahead and apply it rather than keeping it in the open edits list.
 - When sharing visual resume previews during iteration, use the single full-page render by default rather than split or cropped views unless Patrick asks for a different format.
@@ -94,6 +103,7 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 ## Naming and File Rules
 
 - Kickoff resumes should live under `Templates/Resumes/kickoff-resumes/<name>/` with a `resume.tex` baseline and a short `README.md` describing when to use it.
+- Finalized resumes that Patrick approves and that represent a distinct reusable direction should be promoted into `Templates/Resumes/kickoff-resumes/<name>/` instead of remaining only as one-off application history.
 - Finalized application resume source files inside `Applications/<Company>/<job-slug>/` should be named `resume.tex`.
 - The recruiter-facing final PDF should be named `Patrick Tierney.pdf` unless Patrick explicitly asks for a different filename.
 - Keep folder structures sparse. Do not add another subfolder layer unless a directory grows beyond three distinct kickoff resumes and a natural grouping appears.

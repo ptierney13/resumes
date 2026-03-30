@@ -18,6 +18,8 @@ This file is the broad skill pool to choose from when assembling a role-specific
   Evidence: secure infrastructure microservices, Whiteboard backend/platform work, sovereign cloud support
 - Azure DevOps
   Evidence: repository ownership and CI/CD pipeline work
+- Azure DevOps Artifacts / npm package publishing
+  Evidence: owned the Copilot Hub shared-components feed, including package publishing, promotion, rollback, and CI-validated updates
 - YAML-based CI/CD
   Evidence: Whiteboard and Copilot Hub pipeline ownership
 - PowerShell

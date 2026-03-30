@@ -31,6 +31,7 @@ This file maps technologies to evidence already present in Patrick's resume mate
 ### Azure DevOps and YAML-Based CI/CD
 
 - Built and managed CI/CD for Whiteboard and Copilot Hub.
+- Owned the Azure DevOps Artifacts npm feed for Copilot Hub shared components, including package publishing, promotion, rollback, and CI-validated updates.
 - Created and maintained Azure DevOps repositories for internal analytics utilities.
 
 ### PowerShell
@@ -46,6 +47,8 @@ This file maps technologies to evidence already present in Patrick's resume mate
 ### OpenTelemetry, Distributed Tracing, and Observability
 
 - Co-designed and implemented an OpenTelemetry instrumentation framework for Microsoft Whiteboard.
+- Designed shared telemetry APIs, PR-time static analysis, and ingestion-time checks that blocked sensitive data from being logged.
+- Built environment-aware logging APIs so engineers could use one telemetry interface while keeping data from sovereign government cloud environments (GCC, GCCH, DoD) out of non-GCC systems.
 - Led telemetry and alerting work for Microsoft Whiteboard.
 - Enhanced a telemetry query DSL used by 1,000+ Edge engineers.
 
