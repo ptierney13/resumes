@@ -12,6 +12,8 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 - The direct Python command `C:\Python311\python.exe scripts/init_application_folder.py "<Company>" "<job-slug>" --title "<Role Title>" --posting-url "<Posting URL>" --kickoff-resume "<kickoff-resume>"` is still valid as a fallback.
 - That scaffolding step seeds `Applications/<Company>/<job-slug>/resume.tex` from the chosen kickoff resume and marks the folder as the active application in `preview/active-application.txt`.
 - Store the raw or cleaned posting in `job-posting.md` inside the target application folder.
+- After scaffolding, treat the seeded `resume.tex` as the unchanged kickoff baseline until Patrick approves a proposed change list.
+- Do not start tailoring the scaffolded resume contents during intake unless Patrick explicitly asks for a direct first draft.
 
 ## 2. Requirement Audit
 
@@ -32,6 +34,7 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
   - section-order or section-heading changes
   - skills-section organization or label changes
   - candidate bullet additions, removals, or replacements
+- Make it explicit that the proposal is relative to the unchanged scaffolded baseline in `Applications/<Company>/<job-slug>/resume.tex`.
 - Decide whether the posting is best served by:
   - the current section headings as-is
   - a reordering of sections
@@ -47,12 +50,13 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 - If a summary or personality line is used, prefer non-first-person noun-phrase framing such as `A platform engineer passionate about ...`.
 - Favor the existing headings and skill labels when they already work. Do not rename sections or cut skills just for novelty.
 - Do not apply top-level structural changes until Patrick approves them unless he explicitly asks for a direct first draft.
+- Do not make wording-only edits to the scaffolded resume before approval either; keep the baseline unchanged until the proposed change list is approved.
 
 ## 3. Draft Broadly First
 
 - Start from the chosen kickoff resume under `Templates/Resumes/kickoff-resumes/`.
 - Treat `Templates/Resumes/page-layouts/` as layout-only shells with placeholder text, not as content baselines.
-- After the proposed change list is approved, apply the approved content and organization changes to the draft.
+- After the proposed change list is approved, apply the approved content and organization changes to the scaffolded baseline draft.
 - Pull content ideas from:
   - `Templates/Resumes/resume-data/approved-resume-points/`
   - `Templates/Resumes/resume-data/approved-heading-sets.md`
@@ -89,6 +93,7 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 - During drafting and review, prefer the exact command `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\compile_and_preview_current_resume.ps1`.
 - That script is the canonical agent entry point for resume compilation and visual review. It compiles the active application resume when `preview/active-application.txt` points at a valid application folder; otherwise it falls back to `Templates/Resumes/page-layouts/current-standard/resume.tex`.
 - The script also refreshes `preview/current-resume-preview.png` and, for application folders, updates both `resume.pdf` and `Patrick Tierney.pdf`.
+- Before approval, avoid presenting a tailored compile as if it were a draft review; if a preview is useful that early, make clear that it is the unchanged kickoff baseline.
 - Whenever presenting a draft for Patrick to consider, include the compiled PDF and explicitly enumerate:
   - relevant documented knowledge or evidence from the full source-of-truth materials that remains omitted from the draft
   - wording changes made in the current draft

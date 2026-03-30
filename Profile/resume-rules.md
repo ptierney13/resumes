@@ -74,13 +74,17 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 
 ## Collaboration Rules
 
+- The default collaboration flow for a new application is: scaffold the folder from the chosen kickoff resume, save the posting, keep the seeded `resume.tex` unchanged as the baseline, propose changes, then wait for Patrick's approval before tailoring the resume contents.
 - Before drafting or materially editing an application resume, first discuss the proposed content and organization changes and let Patrick approve or reject them item by item unless he explicitly asks for a direct first draft.
+- Scaffolding a new application folder and capturing the posting are allowed before that approval step, but they do not count as approval to change the resume contents.
+- Until Patrick approves the proposal, treat the scaffolded `Applications/<Company>/<job-slug>/resume.tex` as a read-only kickoff baseline.
 - Treat top-level structural changes as approval-gated:
   - summary-line addition or removal
   - section order changes
   - section-heading renames
   - skills-section organization or top-level label changes
 - When proposing changes, provide a discrete change list with short justifications rather than silently applying multiple organizational edits at once.
+- The proposed change list should compare against the unchanged seeded baseline rather than against an already-tailored first draft.
 - When proposing wording changes that Patrick has not already approved, always present the before and after text first.
 - Once Patrick explicitly approves a wording change, go ahead and apply it rather than keeping it in the open edits list.
 - When sharing visual resume previews during iteration, use the single full-page render by default rather than split or cropped views unless Patrick asks for a different format.

@@ -40,6 +40,7 @@ Capture the quick explanation of why the final resume looks the way it does. Inc
 ### `resume.tex`
 
 The finalized LaTeX resume source for that application. New application folders should be seeded from the chosen kickoff resume under `Templates/Resumes/kickoff-resumes/` during scaffolding so agents start from the closest known-good baseline.
+Until Patrick approves a proposed change list for that application, this seeded file should remain unchanged so the kickoff baseline is the review reference point.
 
 ### `Patrick Tierney.pdf`
 
@@ -52,6 +53,7 @@ The rendered one-page recruiter-facing PDF that corresponds to `resume.tex`.
 Use this during drafting for:
 
 - requirement coverage notes
+- proposal notes against the unchanged kickoff baseline
 - summary-line decision notes
 - heading, ordering, or grouping refactor options
 - missing-information questions for Patrick

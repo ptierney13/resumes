@@ -21,6 +21,8 @@ Before making resume changes, go slowly and fully inspect the intended workflow:
 3. Prefer pulling the closest kickoff resume and applying documented durable wording updates from `Templates/Resumes/resume-data/`, `Profile/`, or `Workflow/` over ad hoc restructuring.
 4. Only write a helper script or do direct source transformations after confirming there is not already a documented script, baseline, or clean manual path for the task.
 5. When a role-specific kickoff resume exists, preserve its positioning and section-heading strategy rather than treating the current platform/general default as the only starting point.
+6. For new application work, scaffolding the folder and saving the posting are allowed before approval, but the seeded `resume.tex` must remain an unchanged kickoff baseline until Patrick approves a proposed change list.
+7. After scaffolding, stop and propose resume-content and organization changes with reasoning before editing the seeded `resume.tex` unless Patrick explicitly asks for a direct first draft.
 
 Preferred resume workflow commands:
 ```
@@ -29,6 +31,7 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypas
 ```
 
 The scaffold command seeds `Applications/<Company>/<job-slug>/resume.tex` from the chosen kickoff resume under `Templates/Resumes/kickoff-resumes/` and records the active folder in `preview/active-application.txt`.
+That seeded `resume.tex` should be treated as the untouched baseline for review until Patrick approves proposed resume changes.
 The compile-and-preview script is the canonical agent entry point: it compiles the active application resume when that pointer is set, and otherwise falls back to the layout-only `Templates/Resumes/page-layouts/current-standard/` shell. It refreshes `preview/current-resume-preview.png` and updates both `resume.pdf` and `Patrick Tierney.pdf` in the application folder when an active application is selected.
 
 **XeLaTeX resumes** (`Templates/Resumes/page-layouts/human-teams-delineated/resume.tex` and company-specific `Applications/*/resume.tex` variants) require the [Fontin font](http://www.exljbris.com/fontin.html):
@@ -87,10 +90,12 @@ The local workspace pointer for "which application is currently active" lives in
 
 ### Resume Review Preferences
 
+- The default flow for new applications is: scaffold the folder, save the posting, leave the seeded `resume.tex` unchanged, propose changes for approval, then edit only after approval.
 - Always consider whether the draft should include a top-level one-line summary, but omit it when the section headings and structure already make the target-role fit obvious.
 - If the current section headings do not directly speak to the posting, consider reordering sections, renaming headings, or fully regrouping accomplishments before polishing bullet wording.
 - Keep section headings as clear summaries of the content they introduce; do not add target-role buzzwords gratuitously or duplicate the same concept across multiple headings.
 - Do not drop skills or bullets unless the omission materially strengthens the resume, usually by making room for stronger or more relevant content.
+- When kicking off a new application, do not treat the scaffolded resume as permission to start tailoring immediately; the baseline exists so Patrick can approve the proposed changes against a known starting point.
 - When presenting a draft for review, include the current PDF and explicitly enumerate any relevant documented knowledge or accomplishments not included in the draft plus any wording changes made in that revision.
 - If the organization changed, explicitly summarize what was reorganized, why it was reorganized, and the intended emphasis or vibe of that structural change.
 - In chat, include both a copy-pasteable absolute filesystem path to the current PDF and the inline full-page preview image by default.
