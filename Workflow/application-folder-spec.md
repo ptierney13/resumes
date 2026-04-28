@@ -33,7 +33,7 @@ Capture the quick explanation of why the final resume looks the way it does. Inc
 ## Finalization Expectations
 
 - The final completion message should include copy-pasteable absolute filesystem paths for the application folder as well as the generated `Patrick Tierney.pdf`.
-- Do not rely on clickable local links as part of the default workflow unless Patrick later confirms that a specific format works in the current Codex client.
+- Clickable local filesystem links are not supported in Claude Code's chat output. Use plain copy-pasteable absolute filesystem paths.
 - Before any `git commit`, `git push`, or other action with effects outside this project folder, summarize the local changes, call out any design decisions that were not explicitly specified, and give Patrick a chance to validate.
 - The finalized state should normally be committed and pushed to git once the resume and workflow updates are complete and Patrick has validated the local changes.
 

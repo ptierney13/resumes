@@ -1,12 +1,20 @@
 # Agent Environment Notes
 
-Use this note when the Codex shell can see the repository but fails to find common Windows executables by name.
+Use this note when an agent shell fails to find common Windows executables by name.
 
-## Current Findings
+## Claude Code Environment (Current)
 
-- As of 2026-03-26, the Codex workspace shell PATH does not include standard machine entries such as `C:\Windows\System32`.
-- The machine still has the expected tools installed; the main issue is discovery, not missing software.
-- `C:\Windows\py.exe` exists, but it currently routes to a Windows Store Python alias that fails with `Access is denied` in this environment. Prefer the real interpreter path instead.
+Claude Code has both a Bash tool (Git Bash / MINGW64) and a dedicated PowerShell tool. As of 2026-04-28:
+
+- `git`, `python`, `pdflatex`, and `xelatex` are resolvable by name from bash — no full-path workarounds needed for these.
+- `powershell` and `powershell.exe` are NOT on the Git Bash PATH. To run PowerShell scripts from bash, use the full path: `/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\<name>.ps1`
+- The Claude Code PowerShell tool may also be available depending on context; if so it runs scripts directly without any path workaround.
+
+## Codex Environment (Historical)
+
+The Codex workspace shell PATH did not include standard machine entries such as `C:\Windows\System32`, requiring full-path workarounds for most executables.
+- `C:\Windows\py.exe` routed to a Windows Store Python alias that failed with `Access is denied`. The real interpreter was at `C:\Python311\python.exe`.
+- These workarounds are preserved in `AGENTS.md` for reference if Codex is used again.
 
 ## Known Good Paths On This Machine
 

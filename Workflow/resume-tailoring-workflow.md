@@ -21,13 +21,18 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
   - `Profile/resume-rules.md`
   - `Profile/accomplishment-inventory.md`
   - `Profile/technology-map.md`
+  - `Profile/posting-gap-registry.md`
 - Read prior materials in `Templates/Resumes/kickoff-resumes/`, `Templates/Resumes/resume-data/`, and older finalized applications in `Applications/` as source material only.
 - Build a coverage map of:
   - required skills
   - preferred skills
   - domain keywords
   - leadership or scope signals
-- Prompt Patrick for missing experience details when a requirement is materially relevant and not already supported by the durable docs.
+- For each requirement not fully covered by the durable docs, check `Profile/posting-gap-registry.md` first:
+  - If a registry entry exists and the posting matches the "apply silently when" condition, use the approved framing without prompting Patrick.
+  - If the posting matches the "re-prompt when" condition, ask Patrick specifically whether his experience has changed since the entry was last recorded.
+  - If no registry entry exists, prompt Patrick before the proposal: what the posting requires, what's adjacent in his background, and whether he has direct experience or wants to lean on the analog.
+- When Patrick answers a gap question, add or update the registry entry immediately — before continuing to the proposal.
 - Record explicit non-matches early when the posting names tools Patrick has not used directly, so the draft can lean on analogous experience without overstating fit.
 - Before editing `resume.tex`, present a proposed change list for Patrick to approve or reject item by item. That list should cover:
   - summary-line decision
@@ -109,14 +114,15 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
   - a copy-pasteable absolute filesystem path to `Patrick Tierney.pdf`
   - an inline image render of `preview/current-resume-preview.png` as the default visual review artifact
 - In the final completion message, also include the absolute filesystem path to the application folder containing the generated resume.
-- Treat clickable local filesystem links in Codex as unsupported by default unless Patrick later confirms that a given format actually opens in the current client.
+- Clickable local filesystem links are not supported in Claude Code's chat output. Use plain copy-pasteable absolute filesystem paths for the final PDF and application folder.
 - Do not promote a guessed local-link format into durable workflow guidance before that validation step.
-- The shipped default is to provide plain copy-pasteable absolute filesystem paths for the final PDF and containing application folder rather than relying on clickable local links.
 - More generally, when Patrick flags a bug, broken workflow, or improper assumption during the process, verify the proposed fix before treating it as solved or persisting it into the workflow.
 
 ## 6. Persist Learnings
 
 - Update `Profile/` docs whenever Patrick confirms new durable information or preferences.
+- Update `Profile/posting-gap-registry.md` immediately whenever Patrick answers a requirement gap question — do not defer this to finalization. Include the approved framing and the "apply silently" and "re-prompt" conditions.
+- If a gap answer reveals genuinely new experience, also update `Profile/technology-map.md` and create a new file in `Templates/Resumes/resume-data/approved-resume-points/`.
 - Update `Templates/Resumes/kickoff-resumes/` when a new class-of-role framing proves useful again.
 - After Patrick finalizes an application resume, evaluate whether it should become a kickoff baseline. If it represents a distinct reusable direction, add or refresh a kickoff folder and README so future similar applications can start there directly.
 - Update `Templates/Resumes/resume-data/` when approved bullets, heading sets, skills, or work-history framing change.
@@ -129,8 +135,7 @@ Use this workflow whenever tailoring Patrick Tierney's resume for a specific job
 
 ## Agent Execution Notes
 
-- In this workspace, the default shell is `cmd`, not PowerShell. Do not start by using bare `Get-ChildItem`, `Get-Content`, or `powershell` aliases.
-- In this workspace, `git` may not be on `PATH`. Prefer the full executable path `C:\PROGRA~1\Git\cmd\git.exe`.
-- If common executables are missing from the shell, inspect `Workflow/agent-environment.md`, run `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -File .\scripts\show_tool_locations.ps1`, or use `C:\Windows\System32\cmd.exe /c call .\scripts\with-agent-path.cmd <command>` for a one-off repaired PATH.
+- Claude Code has a Bash tool (Git Bash) and a PowerShell tool. `git`, `python`, `pdflatex`, and `xelatex` are on the bash PATH; `powershell` is not — use the full path `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe` or the PowerShell tool directly.
+- If common executables are missing from the shell, inspect `Workflow/agent-environment.md` for confirmed paths on this machine.
 - Prefer the repository scripts above over raw `pdflatex`, direct preview-rendering helpers, or ad hoc file-copy commands.
 - Only fall back to manual compile commands when the scripted workflow is broken and you have already checked the documented entry points.

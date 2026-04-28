@@ -57,6 +57,15 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
 - Treat older phrasings that describe the same underlying accomplishment as legacy wording variants, not as separate omitted accomplishments.
 - Prefer one-line bullets when they are equally strong; if a bullet takes two lines, make sure the extra words materially improve accuracy, clarity, or impact.
 
+## Gap Handling Rules
+
+- Before prompting Patrick about any requirement gap, check `Profile/posting-gap-registry.md`. If an entry exists and the current posting matches the "apply silently when" condition, apply the approved framing without re-asking.
+- If the posting matches the "re-prompt when" condition for an existing entry, ask Patrick specifically whether his experience has changed since that entry was last recorded, rather than asking from scratch.
+- If no registry entry exists for a requirement, prompt Patrick with: what the posting requires, what (if anything) in his background is adjacent, and whether he has direct experience to draw from or wants to position the analog instead.
+- When Patrick answers a gap question, immediately add or update the entry in `Profile/posting-gap-registry.md` before continuing — do not wait until finalization.
+- Never represent a gap as covered experience. If a hard requirement has no analog and Patrick has no answer, note it explicitly in the proposal and in `working-notes.md`.
+- Gap answers that reveal genuinely new experience (Patrick has done this but it wasn't documented) should also produce a new or updated entry in `Profile/technology-map.md` and a new file in `Templates/Resumes/resume-data/approved-resume-points/`.
+
 ## Documentation Rules
 
 - Overdocument rather than underdocument.
@@ -93,9 +102,8 @@ These are the standing rules for tailoring Patrick Tierney's resume materials.
   - relevant documented knowledge, accomplishments, or points about Patrick that are supported by the full source-of-truth docs but are not included in the draft
   - wording changes made since the last reviewed draft or baseline
 - In chat responses, include a copy-pasteable absolute filesystem path to the current PDF and an inline render of the current full-page preview image when the interface supports images.
-- Treat clickable local filesystem links in Codex as unsupported by default unless Patrick later confirms a format actually opens in the current client.
+- Clickable local filesystem links are not supported in Claude Code's chat output. Use plain copy-pasteable absolute filesystem paths for the current PDF and application folder.
 - Do not claim a local-link workaround is solved, or propagate it into durable guidance, before it has been validated.
-- The shipped default is to provide plain copy-pasteable absolute filesystem paths for the current PDF and application folder rather than relying on clickable local hyperlinks.
 - When Patrick points out that a proposal, fix, or assumption is wrong, do not just swap in another guess; validate the new fix before treating it as solved.
 - If the organization changed, explicitly summarize what was reorganized, why, and the intended emphasis or "vibe" of the structural changes.
 - If no relevant omissions or wording changes exist, say so explicitly rather than leaving those lists implicit.

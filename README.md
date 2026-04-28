@@ -10,7 +10,7 @@ This repo keeps durable personal source-of-truth notes separate from reusable te
 - `Templates/Resumes/content-starting-points/`: role-focused starting points and emphasis guides
 - `Templates/Cover Letters/`: shared cover letter templates
 - `Applications/`: per-company copies of materials you actually used for each application
-- `skills/patrick-resume-workflow/`: the Codex skill that encodes this workflow
+- `skills/patrick-resume-workflow/`: the legacy Codex skill (Claude Code reads `CLAUDE.md` instead)
 
 ## Compile
 
@@ -40,12 +40,12 @@ pdflatex "Applications/Riot/CoverLetter - services.tex"
 ## Versioning Workflow
 
 Use small commits whenever you finish a meaningful round of edits.
-In this workspace shell, prefer `C:\PROGRA~1\Git\cmd\git.exe` because `git` may not be on `PATH`.
+In Claude Code's bash shell, `git` is on PATH directly.
 
 ```bash
-C:\PROGRA~1\Git\cmd\git.exe status
-C:\PROGRA~1\Git\cmd\git.exe add Profile Workflow Templates Applications skills scripts README.md AGENTS.md CLAUDE.md .gitignore
-C:\PROGRA~1\Git\cmd\git.exe commit -m "Update resume bullets for platform roles"
+git status
+git add Profile Workflow Templates Applications skills scripts README.md AGENTS.md CLAUDE.md .gitignore
+git commit -m "Update resume bullets for platform roles"
 ```
 
 ## Tailoring Workflow
@@ -63,11 +63,10 @@ C:\PROGRA~1\Git\cmd\git.exe commit -m "Update resume bullets for platform roles"
    When asking Patrick to review a draft, include the PDF and explicitly list relevant documented points omitted from the draft plus wording changes made in that revision.
    If sections or bullets were reorganized, also summarize what moved, why it moved, and the intended emphasis of that reorganization.
    In chat, include a copy-pasteable absolute filesystem path to the PDF and the inline full-page preview image from `preview/current-resume-preview.png`.
-   Treat clickable local filesystem links in Codex as unsupported by default unless Patrick later confirms that a format opens correctly in the current client.
-   Provide plain absolute filesystem paths for the final PDF and application folder rather than relying on clickable local links.
+   Provide plain absolute filesystem paths for the final PDF and application folder — clickable local links are not supported in Claude Code's chat output.
    More generally, when Patrick calls out a bug or improper assumption in the workflow, verify the fix before rolling it out broadly or documenting it as the new standard.
 6. Save the final `resume.tex`, `Patrick Tierney.pdf`, posting text, and decision summary in the application folder.
-7. Feed any new durable facts or preferences back into `Profile/`, `Templates/`, and the Codex skill.
+7. Feed any new durable facts or preferences back into `Profile/`, `Templates/`, and `CLAUDE.md`.
 8. Once the resume is finalized, make a git commit and push the completed state unless Patrick explicitly says not to.
 9. In the completion message, include copy-pasteable absolute filesystem paths to the application folder and the final PDF.
 
