@@ -1,22 +1,3 @@
-# LaTeX build artifacts
-*.aux
-*.fdb_latexmk
-*.fls
-*.log
-*.out
-*.synctex.gz
-*.toc
-*.xdv
-*.lof
-*.lot
-*.nav
-*.snm
-*.vrb
-
-# OS files
-Thumbs.db
-.DS_Store
-
-# Local tooling and previews
-.local-tools/
-preview/
+PDF Generation/output/build/
+PDF Generation/output/*.pdf
+PDF Generation/preview/*.png

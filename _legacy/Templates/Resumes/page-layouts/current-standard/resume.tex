@@ -1,0 +1,168 @@
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+%\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+%    \vspace{2pt}
+    \item
+    \hspace{1.0em}{\footnotesize\textbf{\scshape #1}}
+    \vspace{-5pt}
+}
+
+\newcommand{\resumeCompanyHeading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \Large\textbf{#1} & \small #2 \\
+    \end{tabular*}\vspace{-10pt}
+}
+
+\newcommand{\resumeRoleSummary}[1]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{@{\hspace{0.9em}}l}
+      {\normalsize #1} \\
+    \end{tabular*}\vspace{-1pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Jordan Example} \\ \vspace{1pt}
+    \small (555) 010-2020 $|$
+    \href{mailto:layout.preview@example.com}{\underline{layout.preview@example.com}} $|$
+    Seattle, WA $|$
+    \href{https://example.com/layout-preview}{\underline{example.com/layout-preview}}
+\end{center}
+
+\begin{center}
+    \small Layout preview content only. Use this file to judge spacing, hierarchy, and visual style rather than wording.
+\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeCompanyHeading{Northwind Systems}{Seattle, WA}
+    \resumeRoleSummary{\textbf{Staff Platform Engineer}~(2022 -- Present), \textbf{Senior Software Engineer}~(2019 -- 2022)}
+    \resumeSubSubheading{Platform Delivery}{}
+\resumeItemListStart
+  \resumeItem{Built deployment and validation workflows for a shared internal platform serving several product teams}
+  \resumeItem{Created reusable service APIs and tooling that reduced repeated implementation work across projects}
+  \resumeItem{Coordinated rollout plans, release readiness, and ownership boundaries for cross-team platform changes}
+\resumeItemListEnd
+\resumeSubSubheading{Reliability \& Observability}{}
+\resumeItemListStart
+  \resumeItem{Designed dashboards, alerting paths, and tracing conventions that made production issues easier to triage}
+  \resumeItem{Documented runbooks and support flows that helped partner teams resolve common incidents without escalation}
+  \resumeItem{Improved release confidence by adding automated checks around deployment health and service readiness}
+\resumeItemListEnd
+\resumeSubSubheading{Collaboration \& Enablement}{}
+\resumeItemListStart
+  \resumeItem{Mentored engineers, reviewed designs, and kept project plans moving across multiple partner teams}
+  \resumeItem{Worked closely with product, support, and operations partners to keep platform changes understandable and sustainable}
+\resumeItemListEnd
+
+    \resumeCompanyHeading{Example Analytics}{Remote}
+    \resumeRoleSummary{\textbf{Software Engineer}~(2017 -- 2019)}
+    \resumeSubSubheading{Application Foundations}{}
+\resumeItemListStart
+  \resumeItem{Implemented backend features and internal tools that supported a small portfolio of customer-facing products}
+  \resumeItem{Maintained SQL-backed services, developer scripts, and team documentation for daily engineering workflows}
+\resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages \& Frameworks}{: TypeScript, JavaScript, Python, SQL, React, C\#} \\
+     \textbf{Infrastructure \& Automation}{: CI/CD, Cloud Services, Scripting, Deployment Tooling} \\
+     \textbf{Testing, Observability \& Security}{: Automated Testing, Alerting, Logging, Tracing, Access Control}
+    }}
+ \end{itemize}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Example University}{Portland, OR}
+      {\normalfont Bachelor of Science in Computer Science}{\normalfont May 2017}
+  \resumeSubHeadingListEnd
+
+
+%-----------INTERESTS-----------
+\section{Selected Extras}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Note}{: This content is intentionally generic placeholder text for layout evaluation only}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
